@@ -1,5 +1,8 @@
 # test
 
+# gh_pages地址
+https://baichaofeng1991.github.io/test
+
 > A Vue.js project
 
 ## Build Setup
