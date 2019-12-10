@@ -92,30 +92,30 @@
                     <label>六、vue-cli如何新增自定义指令？</label>
                     <p>
                         <span>1.创建局部指令</span><br>
-                        <img src="../assets/image/2.png" alt="">
+                        <img src="../assets/image/1.png" alt="">
                     </p>
                     <p>
                         <span>2.全局指令</span><br>
-                        <img src="../assets/image/3.png" alt="">
+                        <img src="../assets/image/2.png" alt="">
                     </p>
                     <p>
                         <span>3.指令的使用</span><br>
-                        <img src="../assets/image/4.png" alt="">
+                        <img src="../assets/image/3.png" alt="">
                     </p>
                 </div>
                 <div class="part">
                     <label>七、vue如何自定义一个过滤器？</label>
                     <p>
                         <span>html代码：</span><br>
-                        <img src="../assets/image/5.png" alt="">
+                        <img src="../assets/image/4.png" alt="">
                     </p>
                     <p>
                         <span>JS代码：</span><br>
-                        <img src="../assets/image/6.png" alt="">
+                        <img src="../assets/image/5.png" alt="">
                     </p>
                     <p>
                         <span>全局定义过滤器</span><br>
-                        <img src="../assets/image/7.png" alt="">
+                        <img src="../assets/image/6.png" alt="">
                     </p>
                     <p>过滤器接收表达式的值 (msg) 作为第一个参数。capitalize 过滤器将会收到 msg的值作为第一个参数。</p>
                 </div>
