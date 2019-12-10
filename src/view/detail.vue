@@ -1,7 +1,6 @@
 <template>
     <div>
         <my-head></my-head>
-        <img src="../assets/image/1.png" alt="">
         <div class="list-con w1200">
             <div class="content">
                 <div class="part">
