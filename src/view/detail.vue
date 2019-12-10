@@ -225,9 +225,9 @@ font-weight: bold;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
-    .content p {line-height: .38rem;margin: .08rem 0;font-size: .14rem;}
+    .content p {line-height: .24rem;margin: .25rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}
-    .content .part label {display: inline-block;padding-bottom: .1rem;border-bottom: 1px solid #cccccc;width: 100%;font-size: .18rem;
+    .content .part label {display: inline-block;padding-bottom: .1rem;border-bottom: 1px solid #cccccc;width: 100%;font-size: .36rem;
     font-weight: bold;}
     .content .part img {width: 100%;}
     
