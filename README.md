@@ -3,6 +3,9 @@
 # gh_pages地址
 https://baichaofeng1991.github.io/test
 
+# 码云pages地址
+http://baichaofeng1991.gitee.io/test
+
 > A Vue.js project
 
 ## Build Setup

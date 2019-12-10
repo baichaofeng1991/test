@@ -201,6 +201,7 @@ export default {
 
     },
     mounted() {
+        console.log('获取路由传递过来的参数',this.$route.query.index)
 
     },
     watch: {
