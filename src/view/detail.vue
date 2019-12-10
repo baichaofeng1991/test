@@ -92,7 +92,7 @@
                     <label>六、vue-cli如何新增自定义指令？</label>
                     <p>
                         <span>1.创建局部指令</span><br>
-                        <img src="../assets/image/1.png" alt="">
+                        <!-- <img src="../assets/image/1.png" alt=""> -->
                     </p>
                     <p>
                         <span>2.全局指令</span><br>
