@@ -96,8 +96,8 @@ export default {
 .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
 .list-con li {padding: .3rem 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
-.list-con li p.title {font-size: .2rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
+.list-con li p.title {font-size: .28rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
 .list-con li p.title:hover {color: #d72b00;}
-.list-con li p.intro {font-size: .14rem;color: #666666;font-weight: 400;line-height: .38rem;}
+.list-con li p.intro {font-size: .28rem;color: #666666;font-weight: 400;line-height: .48rem;}
 .w1200 {width: 100%}
 </style>
