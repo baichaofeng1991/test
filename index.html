@@ -8,6 +8,17 @@
   <body onresize="resizeFresh()">
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    
+    <script>
+      // 这段代码要放在其他js的前面
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <script>
       if (document.documentElement.clientWidth > 500) {
           document.documentElement.style.fontSize = 80 + 'px'
