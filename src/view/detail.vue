@@ -1,7 +1,7 @@
 <template>
     <div>
         <my-head></my-head>
-        <div class="list-con w1200">
+        <div class="list-con w1200" v-if="index == 1">
             <div class="content">
                 <div class="part">
                     <label>一、对于MVVM的理解</label>
@@ -179,6 +179,56 @@
                 </div>
             </div>
         </div>
+        <div class="list-con w1200" v-if="index == 3">
+            <div class="content">
+                <div class="part">
+                    <label>vue创建项目</label>
+                    <p>1.首先安装vue-cli</p>
+                    <p>npm install -g vue-cli</p>
+                    <p>2.vue初始化项目</p>
+                    <p>vue init webpack 项目名</p>
+                    <p><img src="../assets/image/7.png" alt=""></p>
+                    <p>Use ESLint to lint your code? (Y/n)   是否使用ESLint管理代码，ESLint是个代码风格管理工具，是用来统一代码风格的</p>
+                    <p>Setup unit tests with Karma + Mocha? (Y/n)   是否安装单元测试</p>
+                    <p>Setup e2e tests with Nightwatch(Y/n)?    是否安装e2e测试</p>
+                    <p>最后，因为各个模板间都是相互依赖的，所以要安装依赖，用命令进入项目的目录，在命令行输入npm install</p>
+                </div>
+                <div class="part">
+                    <label>上传项目到git中</label>
+                    <p class="p">
+                        <span>1、先进入项目文件夹，通过命令 git init 把这个目录变成git可以管理的仓库</span>
+                        <span class="bg">git init</span>
+                    </p>
+                    <p class="p">
+                        <span>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意思为添加文件夹下的所有文件。</span>
+                        <span class="bg">git add .</span>
+                    </p>
+                    <p class="p">
+                        <span>3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明。</span>
+                        <span class="bg">git commit -m 'message'</span>
+                    </p>
+                    <p class="p">
+                        <span>4、关联到远程库。</span>
+                        <span class="bg">git remote add origin 你的远程库地(如：https://github.com/jwhuang59/vue-element-traveling.git)</span>
+                    </p>
+                    <p class="p">
+                        <span>5、将项目所有push文件到仓库中。</span>
+                        <span class="bg">git push -u origin master</span>
+                    </p>
+                    <p>
+                        <strong>常见问题</strong><br>
+                        <img src="../assets/image/8.png" alt=""><br>
+                        <span>原因：本地和远程的文件应该合并后才能上传本地的新文件</span>
+                    </p>
+                    <p>
+                        <strong>解决:</strong><br>
+                        <span>拉取合并master代码</span><br>
+                        <span>git pull --rebase origin master</span><br>
+                        <span>然后再提交：git push -u origin master</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -190,6 +240,7 @@ export default {
     },
     data() {
         return {
+            index: 1
 
         };
     },
@@ -200,6 +251,7 @@ export default {
 
     },
     mounted() {
+        this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
 
     },
@@ -222,6 +274,8 @@ export default {
 .content .part {margin-bottom: 20px;background: #ffffff;padding: 10px;}
 .content .part label {display: inline-block;padding-bottom: 10px;border-bottom: 1px solid #cccccc;width: 100%;font-size: 18px;
 font-weight: bold;}
+.content .part p.p span {display: block}
+.content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
@@ -230,7 +284,7 @@ font-weight: bold;}
     .content .part label {display: inline-block;padding-bottom: .1rem;border-bottom: 1px solid #cccccc;width: 100%;font-size: .36rem;
     font-weight: bold;}
     .content .part img {width: 100%;}
-    
+    .content .part p.p span.bg {background: #eef0f4;padding: .2rem .4rem;font-size: .3rem;color: #666666;}
 }
 </style>
 
