@@ -64,10 +64,10 @@ export default {
 @media screen and (max-width:640px){
     .head {background: #ffffff;width: 100%}
     .w1200 {width: 100%}
-    .head .nav {background: #379be9;height: .4rem;line-height: .4rem}
-    .head .nav ul {height: 100%;display: flex;align-items: center;justify-content: space-between}
+    .head .nav {background: #379be9;height: .6rem;}
+    .head .nav ul {height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
     .head .nav ul span {color: #666666;font-size: .14rem}
-    .head .nav li {display: inline-block;width: 1.6rem;text-align: center;color: #ffffff;font-weight: bold;font-size: .16rem;cursor: pointer;}
+    .head .nav li {display: inline-block;width: auto;text-align: center;color: #ffffff;font-weight: bold;font-size: .3rem;cursor: pointer;}
     .head .nav li:hover {color: #ff3344;}
 }
 </style>
