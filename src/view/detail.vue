@@ -49,23 +49,23 @@
                     <p>vue的数据双向绑定 将MVVM作为数据绑定的入口，整合Observer，Compile和Watcher三者，通过Observer来监听自己的model的数据变化，通过Compile来解析编译模板指令（vue中是用来解析 {{}}），最终利用watcher搭起observer和Compile之间的通信桥梁，达到数据变化 —>视图更新；视图交互变化（input）—>数据model变更双向绑定效果。</p>
                     <p>
                         <strong>js实现简单的双向绑定</strong><br>
-                        <input type="text" id="txt">
+                        <input type="text" id="txt"><br>
                         <span id="show"></span>
-                        <!-- <script type="text/javascript">
-                            var obj = {}
-                            Object.defineProperty(obj, 'txt', {
-                                get: function () {
-                                    return obj
-                                },
-                                set: function (newValue) {
-                                    document.getElementById('txt').value = newValue
-                                    document.getElementById('show').innerHTML = newValue
-                                }
-                            })
-                            document.addEventListener('keyup', function (e) {
-                                obj.txt = e.target.value
-                            })
-                        </script> -->
+                        《script type="text/javascript"》<br>
+                            var obj = {}<br>
+                            Object.defineProperty(obj, 'txt', {<br>
+                                get: function () {<br>
+                                    return obj<br>
+                                },<br>
+                                set: function (newValue) {<br>
+                                    document.getElementById('txt').value = newValue<br>
+                                    document.getElementById('show').innerHTML = newValue<br>
+                                }<br>
+                            })<br>
+                            document.addEventListener('keyup', function (e) {<br>
+                                obj.txt = e.target.value<br>
+                            })<br>
+                        《/script》
                     </p>
                 </div>
                 <div class="part">
@@ -91,7 +91,8 @@
                     <label>六、vue-cli如何新增自定义指令？</label>
                     <p>
                         <span>1.创建局部指令</span><br>
-                        <img src="../assets/image/1.jpg" alt="">
+                        <span class="img"></span>
+                        
                     </p>
                     <p>
                         <span>2.全局指令</span><br>
@@ -276,6 +277,7 @@ export default {
 font-weight: bold;}
 .content .part p.p span {display: block}
 .content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
+.content .part p .img {background: url('../assets/image/1.jpg')}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
