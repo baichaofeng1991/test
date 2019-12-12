@@ -277,7 +277,7 @@ export default {
 font-weight: bold;}
 .content .part p.p span {display: block}
 .content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
-.content .part p .img {display: block;background: url('../assets/image/1.jpg')no-repeat center;}
+.content .part p .img {display: block;width: 733px;height: 437px; background: url('../assets/image/1.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
