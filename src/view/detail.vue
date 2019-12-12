@@ -65,7 +65,7 @@
                             &nbsp;&nbsp;document.addEventListener('keyup', function (e) {<br>
                                 &nbsp;&nbsp;obj.txt = e.target.value<br>
                             &nbsp;&nbsp;})<br>
-                        &nbsp;&nbsp;&nbsp;《/script》
+                        《/script》
                     </p>
                 </div>
                 <div class="part">
