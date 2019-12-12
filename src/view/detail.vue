@@ -92,7 +92,6 @@
                     <p>
                         <span>1.创建局部指令</span><br>
                         <span class="img"></span>
-                        
                     </p>
                     <p>
                         <span>2.全局指令</span><br>
@@ -188,7 +187,7 @@
                     <p>npm install -g vue-cli</p>
                     <p>2.vue初始化项目</p>
                     <p>vue init webpack 项目名</p>
-                    <p><img src="../assets/image/7.jpg" alt=""></p>
+                    <div class="im-1"></div>
                     <p>Use ESLint to lint your code? (Y/n)   是否使用ESLint管理代码，ESLint是个代码风格管理工具，是用来统一代码风格的</p>
                     <p>Setup unit tests with Karma + Mocha? (Y/n)   是否安装单元测试</p>
                     <p>Setup e2e tests with Nightwatch(Y/n)?    是否安装e2e测试</p>
@@ -218,7 +217,7 @@
                     </p>
                     <p>
                         <strong>常见问题</strong><br>
-                        <img src="../assets/image/8.jpg" alt=""><br>
+                        <span class="im-2"></span><br>
                         <span>原因：本地和远程的文件应该合并后才能上传本地的新文件</span>
                     </p>
                     <p>
@@ -277,7 +276,9 @@ export default {
 font-weight: bold;}
 .content .part p.p span {display: block}
 .content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
-.content .part p .img {display: block;width: 733px;height: 437px; background: url('../assets/image/1.jpg')no-repeat center;background-size: 100% 100%;}
+.content .part p span.img {display: block;width: 733px;height: 437px; background: url('../assets/image/1.jpg')no-repeat center;background-size: 100% 100%;}
+.content .part .im-1 {display: block;width: 661px;height: 350px; background: url('../assets/image/7.jpg')no-repeat center;background-size: 100% 100%;}
+.content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
@@ -287,6 +288,7 @@ font-weight: bold;}
     font-weight: bold;}
     .content .part img {width: 100%;}
     .content .part p.p span.bg {background: #eef0f4;padding: .2rem .4rem;font-size: .3rem;color: #666666;}
+    .content .part p span.img {width: 7.33rem;height: 4.37rem;}
 }
 </style>
 
