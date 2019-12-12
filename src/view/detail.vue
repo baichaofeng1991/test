@@ -187,7 +187,7 @@
                     <p>npm install -g vue-cli</p>
                     <p>2.vue初始化项目</p>
                     <p>vue init webpack 项目名</p>
-                    <p><img src="../assets/image/7.png" alt=""></p>
+                    <p><img src="../assets/7.png" alt=""></p>
                     <p>Use ESLint to lint your code? (Y/n)   是否使用ESLint管理代码，ESLint是个代码风格管理工具，是用来统一代码风格的</p>
                     <p>Setup unit tests with Karma + Mocha? (Y/n)   是否安装单元测试</p>
                     <p>Setup e2e tests with Nightwatch(Y/n)?    是否安装e2e测试</p>
@@ -217,7 +217,7 @@
                     </p>
                     <p>
                         <strong>常见问题</strong><br>
-                        <img src="../assets/image/8.png" alt=""><br>
+                        <img src="../assets/8.png" alt=""><br>
                         <span>原因：本地和远程的文件应该合并后才能上传本地的新文件</span>
                     </p>
                     <p>
