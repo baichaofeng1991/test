@@ -1,6 +1,6 @@
 <template>
     <div>
-        <my-head></my-head>
+        <!-- <my-head></my-head> -->
         <div class="list-con w1200" v-if="index == 1">
             <div class="content">
                 <div class="part">
@@ -52,20 +52,20 @@
                         <input type="text" id="txt"><br>
                         <span id="show"></span>
                         《script type="text/javascript"》<br>
-                            var obj = {}<br>
-                            Object.defineProperty(obj, 'txt', {<br>
-                                get: function () {<br>
-                                    return obj<br>
-                                },<br>
-                                set: function (newValue) {<br>
-                                    document.getElementById('txt').value = newValue<br>
-                                    document.getElementById('show').innerHTML = newValue<br>
-                                }<br>
-                            })<br>
-                            document.addEventListener('keyup', function (e) {<br>
-                                obj.txt = e.target.value<br>
-                            })<br>
-                        《/script》
+                            &nbsp;&nbsp;var obj = {}<br>
+                            &nbsp;&nbsp;Object.defineProperty(obj, 'txt', {<br>
+                                &nbsp;&nbsp;get: function () {<br>
+                                    &nbsp;&nbsp;return obj<br>
+                                &nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;set: function (newValue) {<br>
+                                    &nbsp;&nbsp;document.getElementById('txt').value = newValue<br>
+                                    &nbsp;&nbsp;document.getElementById('show').innerHTML = newValue<br>
+                                &nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;document.addEventListener('keyup', function (e) {<br>
+                                &nbsp;&nbsp;obj.txt = e.target.value<br>
+                            &nbsp;&nbsp;})<br>
+                        &nbsp;&nbsp;&nbsp;《/script》
                     </p>
                 </div>
                 <div class="part">
