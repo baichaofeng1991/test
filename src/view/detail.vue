@@ -303,7 +303,7 @@ font-weight: bold;}
 .content .part .im-1 {display: block;width: 661px;height: 350px; background: url('../assets/image/7.jpg')no-repeat center;background-size: 100% 100%;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
-    .list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
+    .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
     .w1200 {width: 100%;}
     .content p {line-height: .46rem;margin: .3rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}
@@ -311,8 +311,8 @@ font-weight: bold;}
     font-weight: bold;}
     .content .part img {width: 100%;}
     .content .part p.p span.bg {background: #eef0f4;padding: .2rem .4rem;font-size: .3rem;color: #666666;}
-    .content .part p span.img {width: 7.33rem;height: 4.37rem;}
-    .content .part .im-1 {width: 6.61rem;height: 3.50rem;}
+    .content .part p span.img {width: 100%;height: 4.37rem;}
+    .content .part .im-1 {width: 100%;height: 3.50rem;}
     .content .part .im-2 {width: 3.99rem;height: 2.57rem;}
 }
 </style>
