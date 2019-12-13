@@ -1,7 +1,9 @@
 <template>
     <div>
         <!-- <my-head></my-head> -->
-        <div class="list-con w1200" v-if="index == 1">
+        
+        <div class="part-head w1200" id="top-head"></div>
+        <div class="list-con w1200" id="list-con" v-if="index == 1">
             <div class="content">
                 <div class="part">
                     <label>一、对于MVVM的理解</label>
@@ -179,7 +181,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-con w1200" v-if="index == 3">
+        <div class="list-con w1200" id="list-con" v-if="index == 3">
             <div class="content">
                 <div class="part">
                     <label>vue创建项目</label>
@@ -217,7 +219,7 @@
                     </p>
                     <p>
                         <strong>常见问题</strong><br>
-                        <span class="im-2"></span><br>
+                        <span class="im-2"></span>
                         <span>原因：本地和远程的文件应该合并后才能上传本地的新文件</span>
                     </p>
                     <p>
@@ -240,24 +242,42 @@ export default {
     },
     data() {
         return {
-            index: 1
+            index: 1,
+            arrColor: ['#FF0000','#FF7F00','#FFFF00','#00FF00','#00FFFF','#0000FF','#8B00FF'],
+            n: 0
 
         };
     },
+    //是在DOM执行完成后立马执行（如：赋值）
     computed: {
-
+        
     },
+    //执行时挂载阶段还没有开始，模版还没有渲染成html，所以无法获取元素。created钩子函数主要用来初始化数据。
     created() {
-
+        
     },
+    //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
-
+        console.log('数组',this.arrColor[1])
+        console.log('数组长度',this.arrColor.length)
+        setInterval(() => {
+            if(this.n == this.arrColor.length) {
+                this.n = 0
+            }
+            document.getElementById('top-head').style.background = this.arrColor[this.n]
+            document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
+            this.n++
+        }, 2500);
     },
+    //用于检测vue实例上数据的变动
+    //默认加载的时候先computed再watch，不执行methods；等触发某一事件后，则是：先methods再watch。
     watch: {
-
+    
     },
+    //方法有一定的触发条件，如click等。
+    //所有方法都应该在methods里定义，在mounted或created里面使用this调用，用这种方法实现初始化。
     methods: {
 
     },
@@ -268,7 +288,10 @@ export default {
 </script>
 
 <style scoped>
-.list-con {background: #ffffff;margin-top: 20px;box-sizing: border-box;padding: 30px 50px;}
+.list-con {background: #ffffff;box-sizing: border-box;padding: 30px 50px;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000;border-radius: 25px;}
+
+/* .part-head {width: 100%;height: 40px;background: #FF0000;} */
+#top-head {height: 30px;background: #FF0000;border-radius: 100%;}
 
 .content p {line-height: 24px;margin: 8px 0;font-size: 14px;}
 .content .part {margin-bottom: 20px;background: #ffffff;padding: 10px;}
@@ -289,6 +312,8 @@ font-weight: bold;}
     .content .part img {width: 100%;}
     .content .part p.p span.bg {background: #eef0f4;padding: .2rem .4rem;font-size: .3rem;color: #666666;}
     .content .part p span.img {width: 7.33rem;height: 4.37rem;}
+    .content .part .im-1 {width: 6.61rem;height: 3.50rem;}
+    .content .part .im-2 {width: 3.99rem;height: 2.57rem;}
 }
 </style>
 
