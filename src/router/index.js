@@ -8,12 +8,12 @@ import Detail from '../view/detail.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
-    {
-      path: '',
-      redirect: '/pc_home'
-    },
+    // {
+    //   path: '',
+    //   redirect: '/pc_home'
+    // },
     {
       path: '/pc_home',
       name: 'pc_home',
