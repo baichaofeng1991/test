@@ -5,7 +5,7 @@
         <div class="list-con w1200" v-if="receive == 1">
             <ul>
                 <li>
-                    <p class="title"><router-link to='/detail'>Vue面试知识点总结</router-link></p>
+                    <p class="title"><router-link :to ="{path:'/detail',query:{index:1}}">Vue面试知识点总结</router-link></p>
                     <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
                 </li>
                 <li>
