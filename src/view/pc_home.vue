@@ -2,10 +2,12 @@
     <div>
         <my-head :index = 'num' @transmit = 'transmitData'></my-head>
 
-        <div class="list-con w1200" v-if="receive == 1">
+        <div class="list-con w1000" v-if="receive == 1">
             <ul>
                 <li>
-                    <p class="title"><router-link :to ="{path:'/detail',query:{index:1}}">Vue面试知识点总结</router-link></p>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:1,title:'Vue面试知识点总结'}}">Vue面试知识点总结</router-link>
+                    </p>
                     <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
                 </li>
                 <li>
@@ -13,12 +15,14 @@
                     <p class="intro">最近做了两个关于h5页面对接公众号的项目，不得不提打开微信浏览器内置地图导航的功能确实有点恶心。下次想起来了的话，进行总结分享一下如何处理。在vue移动端h5页面当中，其中适配是经常会遇到的问题，这块主要有死个方法可以适用。</p>
                 </li>
                 <li>
-                    <p class="title"><router-link :to ="{path:'/detail',query:{index:3}}">vue创建项目并且上传到git中的步骤</router-link></p>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:3,title:'vue创建项目并且上传到git中的步骤'}}">vue创建项目并且上传到git中的步骤</router-link>
+                    </p>
                     <p class="intro">创建vue项目步骤，将vue项目上传至git中的步骤</p>
                 </li>
             </ul>
         </div>
-        <div class="list-con w1200" v-if="receive == 2">
+        <div class="list-con w1000" v-if="receive == 2">
             <ul>
                 <li>
                     <p class="title"><router-link to='/detail'>JQ</router-link></p>
@@ -34,7 +38,7 @@
                 </li>
             </ul>
         </div>
-        <div class="list-con w1200" v-if="receive == 5">
+        <div class="list-con w1000" v-if="receive == 5">
             <ul>
                 <li>
                     <p class="title"><router-link to='/detail'>JQ</router-link></p>

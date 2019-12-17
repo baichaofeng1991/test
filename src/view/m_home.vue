@@ -2,7 +2,7 @@
     <div>
         <my-head :index = 'num' @transmit = 'transmitData'></my-head>
 
-        <div class="list-con w1200" v-if="receive == 1">
+        <div class="list-con w1000" v-if="receive == 1">
             <ul>
                 <li>
                     <p class="title"><router-link :to ="{path:'/detail',query:{index:1}}">Vue面试知识点总结</router-link></p>
@@ -18,7 +18,7 @@
                 </li>
             </ul>
         </div>
-        <div class="list-con w1200" v-if="receive == 2">
+        <div class="list-con w1000" v-if="receive == 2">
             <ul>
                 <li>
                     <p class="title"><router-link to='/detail'>JQ</router-link></p>
@@ -34,7 +34,7 @@
                 </li>
             </ul>
         </div>
-        <div class="list-con w1200" v-if="receive == 5">
+        <div class="list-con w1000" v-if="receive == 5">
             <ul>
                 <li>
                     <p class="title"><router-link to='/detail'>JQ</router-link></p>
@@ -99,5 +99,5 @@ export default {
 .list-con li p.title {font-size: .3rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
 .list-con li p.title:hover {color: #d72b00;}
 .list-con li p.intro {font-size: .28rem;color: #666666;font-weight: 400;line-height: .48rem;}
-.w1200 {width: 100%}
+.w1000 {width: 100%}
 </style>

@@ -2,8 +2,8 @@
     <div>
         <!-- <my-head></my-head> -->
         
-        <div class="part-head w1200" id="top-head"></div>
-        <div class="list-con w1200" id="list-con" v-if="index == 1">
+        <div class="part-head w1000" id="top-head"></div>
+        <div class="list-con w1000" id="list-con" v-if="index == 1">
             <div class="content">
                 <div class="part">
                     <label>一、对于MVVM的理解</label>
@@ -54,19 +54,19 @@
                         <input type="text" id="txt"><br>
                         <span id="show"></span>
                         《script type="text/javascript"》<br>
-                            &nbsp;&nbsp;var obj = {}<br>
-                            &nbsp;&nbsp;Object.defineProperty(obj, 'txt', {<br>
-                                &nbsp;&nbsp;get: function () {<br>
-                                    &nbsp;&nbsp;return obj<br>
-                                &nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;set: function (newValue) {<br>
-                                    &nbsp;&nbsp;document.getElementById('txt').value = newValue<br>
-                                    &nbsp;&nbsp;document.getElementById('show').innerHTML = newValue<br>
-                                &nbsp;&nbsp;}<br>
-                            &nbsp;&nbsp;})<br>
-                            &nbsp;&nbsp;document.addEventListener('keyup', function (e) {<br>
-                                &nbsp;&nbsp;obj.txt = e.target.value<br>
-                            &nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;var obj = {}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Object.defineProperty(obj, 'txt', {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get: function () {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return obj<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;set: function (newValue) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('txt').value = newValue<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('show').innerHTML = newValue<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener('keyup', function (e) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.txt = e.target.value<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br>
                         《/script》
                     </p>
                 </div>
@@ -181,10 +181,10 @@
                 </div>
             </div>
         </div>
-        <div class="list-con w1200" id="list-con" v-if="index == 3">
+        <div class="list-con w1000" id="list-con" v-if="index == 3">
             <div class="content">
                 <div class="part">
-                    <label>vue创建项目</label>
+                    <label @click="changeStatus">vue创建项目+{{this.$store.state.count}}</label>
                     <p>1.首先安装vue-cli</p>
                     <p>npm install -g vue-cli</p>
                     <p>2.vue初始化项目</p>
@@ -260,8 +260,10 @@ export default {
     mounted() {
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
+        console.log('获取路由传递过来的参数',this.$route.query.title)
         console.log('数组',this.arrColor[1])
         console.log('数组长度',this.arrColor.length)
+        console.log('获取Vuex中的数据',this.$store.state.count)
         setInterval(() => {
             if(this.n == this.arrColor.length) {
                 this.n = 0
@@ -279,6 +281,10 @@ export default {
     //方法有一定的触发条件，如click等。
     //所有方法都应该在methods里定义，在mounted或created里面使用this调用，用这种方法实现初始化。
     methods: {
+        //改变更新Vuex中的状态数据
+        changeStatus() {
+            this.$store.commit('increment','改变之后的状态')
+        }
 
     },
     components: {
@@ -304,7 +310,7 @@ font-weight: bold;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
-    .w1200 {width: 100%;}
+    .w1000 {width: 100%;}
     .content p {line-height: .46rem;margin: .3rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}
     .content .part label {display: inline-block;padding-bottom: .1rem;border-bottom: 1px solid #cccccc;width: 100%;font-size: .36rem;

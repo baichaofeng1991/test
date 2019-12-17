@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="head">
-            <div class="w1200">
+            <div class="w1000">
                 <img src="../assets/logo.png" alt="">
             </div>
             <div class="nav">
-                <div class="w1200">
+                <div class="w1000">
                     <ul>
                         <li @click="route(1)">Vue {{index}}</li><span>|</span>
                         <li @click="route(2)">JQuery</li><span>|</span>
@@ -63,7 +63,7 @@ export default {
 
 @media screen and (max-width:640px){
     .head {background: #ffffff;width: 100%}
-    .w1200 {width: 100%}
+    .w1000 {width: 100%}
     .head .nav {background: #379be9;height: .6rem;}
     .head .nav ul {height: 100%;display: flex;align-items: center;justify-content: space-between;padding: 0 .2rem;}
     .head .nav ul span {color: #666666;font-size: .14rem}

@@ -62,6 +62,6 @@ img{vertical-align:middle;}
 .cp{cursor:pointer;}
 .fl{float:left;}
 .fr{float:right;}
-.w1200{ width: 1200px; margin: 0 auto; position:relative;}
+.w1000{ width: 1000px; margin: 0 auto; position:relative;}
 a {color: #3e4146;text-decoration: none;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;}
 </style>
