@@ -7,11 +7,12 @@ Vue.use(Vuex)
 const store =  new Vuex.Store({
     //初始状态存放
     state: {
-        count: '初始状态'
+        count: '初始状态',
+        num: 1
     },
     getters: {
         doneTodos: state => {
-            return state.count ++;
+            return state.num + 1000;
         }
     },
     //更新初始状态

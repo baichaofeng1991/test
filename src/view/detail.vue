@@ -3,7 +3,7 @@
         <!-- <my-head></my-head> -->
         
         <div class="part-head w1000" id="top-head"></div>
-        <div class="list-con w1000" id="list-con" v-if="index == 1">
+        <div class="list-con w1000" id="list-con" v-if="index == 'vue-1'">
             <div class="content">
                 <div class="part">
                     <label>一、对于MVVM的理解</label>
@@ -179,9 +179,21 @@
                         <span style="color: rgb(243, 171, 83);">使用query传参的话，会在浏览器的url栏看到传的参数类似于get请求，使用params传参的话则不会，类似于post请求。</span>
                     </p>
                 </div>
+                <div class="part">
+                    <label>父组件怎么调用子组件里的方法</label>
+                    <p>1.在父组件中：首先要引入子组件 import Child from './child';</p>
+                    <p>2.《child ref="mychild"》《/child》是在父组件中为子组件添加一个占位，ref="mychild"是子组件在父组件中的名字</p>
+                    <p>3.父组件中 components: {是声明子组件在父组件中的名字}</p>
+                    <p>4.在父组件的方法中调用子组件的方法，很重要 this.$refs.mychild.parentHandleclick("嘿嘿嘿"); parentHandleclick是子组件中的方法</p>
+                </div>
+                <div class="part">
+                    <label>应该在vue的生命周期的什么阶段发出ajax请求</label>
+                    <p>看实际情况，一般在 created 里面就可以，如果涉及到需要页面加载完成之后的话就用 mounted</p>
+                </div>
             </div>
         </div>
-        <div class="list-con w1000" id="list-con" v-if="index == 3">
+        
+        <div class="list-con w1000" id="list-con" v-if="index == 'vue-3'">
             <div class="content">
                 <div class="part">
                     <label @click="changeStatus">vue创建项目+{{this.$store.state.count}}</label>
@@ -231,6 +243,115 @@
                 </div>
             </div>
         </div>
+
+        <div class="list-con w1000" id="list-con" v-if="index == 'js-1'">
+            <div class="content">
+                <div class="part">
+                    <label>js 中的类</label>
+                    <p>ES5 中定义一个类</p>
+                    <p><img src="../assets/image/9.png" alt=""></p>
+                    <p>ES6以后的语法（可以看做是ES5的语法糖）</p>
+                    <p><img src="../assets/image/10.png" alt=""></p>
+                    <p>ES6 的类，完全可以看作构造函数的另一种写法。</p>
+                    <p><img src="../assets/image/11.png" alt=""></p>
+                    <p>上面代码表明，<strong>类的数据类型就是函数，类本身就指向构造函数。</strong></p>
+                </div>
+                <div class="part">
+                    <label>ES6 需要注意的点</label>
+                    <p>1.类的内部所有定义的方法，都是不可枚举的（non-enumerable）。 ES5 的写法，prototype上的方法就是可枚举的。</p>
+                    <p>2.2.类的方法都定义在prototype对象上面，所以类的新方法可以添加在prototype对象上面。Object.assign方法可以很方便地一次向类添加多个方法。</p>
+                    <p><img src="../assets/image/12.png" alt=""></p>
+                    <p>prototype对象的constructor属性，直接指向“类”的本身，这与 ES5 的行为是一致的。</p>
+                    <p>3.类和模块的内部，默认就是严格模式</p>
+                    <p>4.constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。constructor方法默认返回实例对象（即this），完全可以指定返回另外一个对象。</p>
+                    <p><img src="../assets/image/13.png" alt=""></p>
+                    <p>上面代码中，constructor函数返回一个全新的对象，结果导致实例对象不是Foo类的实例。</p>
+                    <p>5.类不存在变量提升（hoist），这一点与 ES5 完全不同。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 微信小程序 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'wx-1'">
+            <div class="content">
+                <div class="part">
+                    <label>封装代码</label>
+                    <p><img src="../assets/image/14.png" alt=""><img src="../assets/image/15.png" alt=""></p>
+                </div>
+                <div class="part">
+                    <label>使用方法</label>
+                    <p><span>在app.js中引入：</span><br><img src="../assets/image/16.png" alt=""></p>
+                    <p><span>然后在要使用的页面里引入使用即可：</span><br><img src="../assets/image/17.png" alt=""></p>
+                    <p>使用方法：</p>
+                    <p>Get请求就是：<span style="color: #c7254e">ajax.getRequest(url: String, data: Object);</span></p>
+                    <p>Post请求就是：<span style="color: #c7254e">ajax.postRequest(url: String, data: Object);</span></p>
+                    <p><strong>参考页面：</strong><a style="color: #0681d0" href="https://juejin.im/post/5b050e5651882542816aabfa" target="_blank">封装wx.request</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- 前端对象分类 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'ht-1'">
+            <div class="content">
+                <div class="part">
+                    <label>JavaScript 对象（JS对象）</label>
+                    <p>
+                        <ul>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-array.html">JavaScript Array 对象☞</a><br><img src="../assets/image/18.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-boolean.html">JavaScript Boolean 对象☞</a><br><img src="../assets/image/19.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-date.html">JavaScript Date 对象☞</a><br><img src="../assets/image/20.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-math.html">JavaScript Math 对象☞</a><br><img src="../assets/image/21.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-number.html">JavaScript Number 对象☞</a><br><img src="../assets/image/22.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-string.html">JavaScript String 对象☞</a><br><img src="../assets/image/23.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-regexp.html">JavaScript RegExp 对象☞</a><br><img src="../assets/image/24.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-global.html">JavaScript 全局属性/函数☞</a><br><img src="../assets/image/25.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-operators.html">JavaScript 运算符☞</a><br><img src="../assets/image/26.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/jsref-obj-error.html">JavaScript Error☞</a><br><img src="../assets/image/27.png" alt=""></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="part">
+                    <label>Browser 对象（浏览器对象）</label>
+                    <p>
+                        <ul>
+                            <li><a href="https://www.runoob.com/jsref/obj-window.html">Window 对象☞</a><br><img src="../assets/image/28.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/obj-navigator.html">Navigator 对象☞</a><br><img src="../assets/image/29.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/obj-screen.html">Screen 对象☞</a><br><img src="../assets/image/30.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/obj-history.html">History 对象☞</a><br><img src="../assets/image/31.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/obj-location.html">Location 对象☞</a><br><img src="../assets/image/32.png" alt=""></li>
+                            <li><a href="https://www.runoob.com/jsref/obj-storage.html">存储对象☞</a><br><img src="../assets/image/33.png" alt=""></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="part">
+                    <label>Dom 对象（dom对象）</label>
+                    <p>
+                        <ul>
+                            <li><a href="">HTML DOM Document 对象☞</a></li>
+                            <li><a href="">HTML DOM 元素对象☞</a></li>
+                            <li><a href="">HTML DOM 属性对象☞</a></li>
+                            <li><a href="">HTML DOM 事件对象☞</a></li>
+                            <li><a href="">HTML DOM Console 对象☞</a></li>
+                            <li><a href="">CSSStyleDeclaration 对象☞</a></li>
+                            <li><a href="">DOM HTMLCollection☞</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="part">
+                    <label>HTML 对象（html对象）</label>
+                    <p>
+                        <ul>
+                            <li><a href="">a标签</a></li>
+                            <li><a href="">div标签</a></li>
+                            <li><a href="">button标签</a></li>
+                            <li><a href="">form 标签</a></li>
+                            <li><a href="">img 标签</a></li>
+                            <li><a href="">body 标签</a></li>
+                            <li><a href="">各标签等.....</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -242,7 +363,7 @@ export default {
     },
     data() {
         return {
-            index: 1,
+            index: '',
             arrColor: ['#FF0000','#FF7F00','#FFFF00','#00FF00','#00FFFF','#0000FF','#8B00FF'],
             n: 0
 
@@ -264,6 +385,7 @@ export default {
         console.log('数组',this.arrColor[1])
         console.log('数组长度',this.arrColor.length)
         console.log('获取Vuex中的数据',this.$store.state.count)
+        console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
         setInterval(() => {
             if(this.n == this.arrColor.length) {
                 this.n = 0
@@ -301,11 +423,16 @@ export default {
 
 .content p {line-height: 24px;margin: 8px 0;font-size: 14px;}
 .content .part {margin-bottom: 20px;background: #ffffff;padding: 10px;}
+.content .part:last-child {margin-bottom: 0;}
 .content .part label {display: inline-block;padding-bottom: 10px;border-bottom: 1px solid #cccccc;width: 100%;font-size: 18px;
 font-weight: bold;}
 .content .part p.p span {display: block}
 .content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
 .content .part p span.img {display: block;width: 733px;height: 437px; background: url('../assets/image/1.jpg')no-repeat center;background-size: 100% 100%;}
+.content .part p li {margin-bottom: 20px;}
+.content .part p li:last-child {margin-bottom: 0;}
+.content .part p li a {font-size: 16px;color: #64854c;font-weight: bold;}
+.content .part p li img {border: 1px solid #d4d4d4;}
 .content .part .im-1 {display: block;width: 661px;height: 350px; background: url('../assets/image/7.jpg')no-repeat center;background-size: 100% 100%;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){

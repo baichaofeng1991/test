@@ -9,9 +9,9 @@
                     <ul>
                         <li @click="route(1)">Vue {{index}}</li><span>|</span>
                         <li @click="route(2)">JQuery</li><span>|</span>
-                        <li @click="route(3)">JS</li><span>|</span>
-                        <li @click="route(4)">PHP</li><span>|</span>
-                        <li @click="route(5)">移动端适配</li>
+                        <li @click="route(3)">JavaScript</li><span>|</span>
+                        <li @click="route(4)">小程序</li><span>|</span>
+                        <li @click="route(5)">前端对象</li>
                     </ul>
                 </div>
             </div>
