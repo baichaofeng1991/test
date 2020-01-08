@@ -11,7 +11,8 @@
                         <li @click="route(2)">JQuery</li><span>|</span>
                         <li @click="route(3)">JavaScript</li><span>|</span>
                         <li @click="route(4)">小程序</li><span>|</span>
-                        <li @click="route(5)">前端对象</li>
+                        <li @click="route(5)">前端对象</li><span>|</span>
+                        <li @click="route(6)">休闲/娱乐</li>
                     </ul>
                 </div>
             </div>

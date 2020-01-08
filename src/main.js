@@ -5,7 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import './assets/js/special'
+import VideoPlayer from 'vue-video-player';
+import "video.js/dist/video-js.css";
 
+Vue.use(VideoPlayer)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

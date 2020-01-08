@@ -2,7 +2,10 @@
     <div>
         <!-- <my-head></my-head> -->
         
-        <div class="part-head w1000" id="top-head"></div>
+        <div class="part-head" id="top-head">
+            <div class="img"><img src="../assets/image/user.png" alt=""></div>
+        </div>
+        <div class="title w1000">{{this.$route.query.title}}</div>
         <div class="list-con w1000" id="list-con" v-if="index == 'vue-1'">
             <div class="content">
                 <div class="part">
@@ -192,7 +195,7 @@
                 </div>
             </div>
         </div>
-        
+        <!-- vue创建项目 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'vue-3'">
             <div class="content">
                 <div class="part">
@@ -243,7 +246,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- js类 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'js-1'">
             <div class="content">
                 <div class="part">
@@ -352,11 +355,27 @@
                 </div>
             </div>
         </div>
+        <!-- 视频 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'm-1'">
+            <video-player class="video-player vjs-custom-skin"
+            ref="videoPlayer"
+            :playsinline="true"
+            :options="playerOptions"
+            @ready="playerReadied">
+            </video-player>
+        </div>
     </div>
 </template>
 
 <script>
 import myHead from '../components/header';
+
+import "vue-video-player/src/custom-theme.css";
+// videojs
+import videojs from 'video.js'
+window.videojs = videojs
+// hls plugin for videojs6
+require('videojs-contrib-hls/dist/videojs-contrib-hls.js')
 export default {
     props: {
 
@@ -365,7 +384,38 @@ export default {
         return {
             index: '',
             arrColor: ['#FF0000','#FF7F00','#FFFF00','#00FF00','#00FFFF','#0000FF','#8B00FF'],
-            n: 0
+            n: 0,
+            timer: '',
+            title: '',
+            playerOptions: {
+                playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+                autoplay: true, //如果true,浏览器准备好时开始回放。
+                muted: false, // 默认情况下将会消除任何音频。
+                loop: false, // 导致视频一结束就重新开始。
+                preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+                language: 'zh-CN',
+                aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+                fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+                sources: [{
+                    withCredentials: false,
+                    type: "application/x-mpegURL",
+                    // src: "https://logos-channel.scaleengine.net/logos-channel/live/biblescreen-ad-free/playlist.m3u8",
+                    // src: 'http://aldirect.hls.huya.com/huyalive/30765679-2504742278-10757786168918540288-3049003128-10057-A-0-1_1200.m3u8',
+                    src: this.$route.query.url
+                },{
+                    // src: 'https://pan.baidu.com/s/1ha0lBVQeYf_nf-3qmnLang',
+                    // type: 'video/mp4'
+                }],
+                poster: "http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg", //你的封面地址
+                // width: document.documentElement.clientWidth,
+                notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+                controlBar: {
+                    timeDivider: true,
+                    durationDisplay: true,
+                    remainingTimeDisplay: false,
+                    fullscreenToggle: true  //全屏按钮
+                },
+            }
 
         };
     },
@@ -375,10 +425,11 @@ export default {
     },
     //执行时挂载阶段还没有开始，模版还没有渲染成html，所以无法获取元素。created钩子函数主要用来初始化数据。
     created() {
-        
+
     },
     //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
+        
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
         console.log('获取路由传递过来的参数',this.$route.query.title)
@@ -386,14 +437,20 @@ export default {
         console.log('数组长度',this.arrColor.length)
         console.log('获取Vuex中的数据',this.$store.state.count)
         console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
-        setInterval(() => {
+
+        this.timer = setInterval(() => {
             if(this.n == this.arrColor.length) {
                 this.n = 0
             }
-            document.getElementById('top-head').style.background = this.arrColor[this.n]
+            // document.getElementById('top-head').style.background = this.arrColor[this.n]
             document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
             this.n++
         }, 2500);
+    },
+    //组件销毁之前执行
+    beforeDestroy() {
+        //清除定时器
+        clearInterval(this.timer)
     },
     //用于检测vue实例上数据的变动
     //默认加载的时候先computed再watch，不执行methods；等触发某一事件后，则是：先methods再watch。
@@ -406,20 +463,30 @@ export default {
         //改变更新Vuex中的状态数据
         changeStatus() {
             this.$store.commit('increment','改变之后的状态')
+        },
+        playerReadied(player) {
+            var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
+            player.tech_.hls.xhr.beforeRequest = function(options) {
+            // console.log(options)
+            return options
+            }
         }
 
     },
     components: {
-        myHead
+        myHead,
     },
 };
 </script>
 
 <style scoped>
-.list-con {background: #ffffff;box-sizing: border-box;padding: 30px 50px;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000;border-radius: 25px;}
+.list-con {background: #ffffff;box-sizing: border-box;padding: 30px;border-top: 10px solid #FF0000;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000;border-radius: 25px;}
+.title {font-size: 30px;font-weight: bold;color: #ffffff;text-align: center;background: #21292f;height: 50px;line-height: 50px;margin-bottom: 15px;border-bottom-left-radius: 45px;border-top-right-radius: 45px;}
+
 
 /* .part-head {width: 100%;height: 40px;background: #FF0000;} */
-#top-head {height: 30px;background: #FF0000;border-radius: 100%;}
+#top-head {background: #21292f;text-align: center;height: 300px;margin-bottom: 30px;line-height: 300px;}
+#top-head .img {display: inline-block;margin-top: 20px;}
 
 .content p {line-height: 24px;margin: 8px 0;font-size: 14px;}
 .content .part {margin-bottom: 20px;background: #ffffff;padding: 10px;}
@@ -437,6 +504,7 @@ font-weight: bold;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
+    .list-con video {height: 6rem;}
     .w1000 {width: 100%;}
     .content p {line-height: .46rem;margin: .3rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}
@@ -447,6 +515,8 @@ font-weight: bold;}
     .content .part p span.img {width: 100%;height: 4.37rem;}
     .content .part .im-1 {width: 100%;height: 3.50rem;}
     .content .part .im-2 {width: 3.99rem;height: 2.57rem;}
+    #top-head {height: 3rem;margin-bottom: .3rem;line-height: 3rem;}
+    #top-head .img {margin-top: .2rem;}
 }
 </style>
 
