@@ -6,6 +6,7 @@
             <div class="img"><img src="../assets/image/user.png" alt=""></div>
         </div>
         <div class="title w1000">{{this.$route.query.title}}</div>
+
         <div class="list-con w1000" id="list-con" v-if="index == 'vue-1'">
             <div class="content">
                 <div class="part">
@@ -195,6 +196,36 @@
                 </div>
             </div>
         </div>
+        <!-- vue中使用axios -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'vue-2'">
+            <div class="content">
+                <div class="part">
+                    <label @click="changeStatus">1.安装axios+{{this.$store.state.count}}</label>
+                    <p>npm：</p>
+                    <p>$ npm install axios -S</p>
+                    <p>2.vue初始化项目</p>
+                    <p>cdn：</p>
+                    <p>script src="https://unpkg.com/axios/dist/axios.min.js" script</p>
+                </div>
+                <div class="part">
+                    <label>2.配置axios</label>
+                    <p>在项目中新建api/index.js文件，用以配置axios</p>
+                    <p>api/index.js</p>
+                    <p><img src="../assets/image/34.png" alt=""></p>
+                    <p>这里的配置了POST、GET、PUT、DELETE方法。并且自动将JSON格式数据转为URL拼接的方式</p>
+                    <p>同时配置了跨域，不需要的话将withCredentials设置为false即可</p>
+                    <p>并且设置了默认头部地址为：http://localhost:8080/，这样调用的时候只需写访问方法即可</p>
+                </div>
+                <div class="part">
+                    <label>3.使用axios</label>
+                    <p>注：PUT请求默认会发送两次请求，第一次预检请求不含参数，所以后端不能对PUT请求地址做参数限制</p>
+                    <p>首先在main.js中引入方法</p>
+                    <p><img src="../assets/image/35.png" alt=""></p>
+                    <p>然后在需要的地方调用即可</p>
+                    <p><img src="../assets/image/36.png" alt=""></p>
+                </div>
+            </div>
+        </div>
         <!-- vue创建项目 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'vue-3'">
             <div class="content">
@@ -246,6 +277,21 @@
                 </div>
             </div>
         </div>
+        <!-- vue中使用vue-video-player -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'vue-4'">
+            <div class="content">
+                <div class="part">
+                    <label>vue-video-player的使用总结</label>
+                    <p>首先 npm install vue-video-player -S;</p>
+                    <p>在main.js进行配置：</p>
+                    <p><img src="../assets/image/37.png" alt=""><br><img src="../assets/image/38.png" alt=""></p>
+                    <p>在组件中使用</p>
+                    <p><img src="../assets/image/39.png" alt=""></p>
+                    <p>常用参数：</p>
+                    <p><img src="../assets/image/40.png" alt=""><br><img src="../assets/image/41.png" alt=""></p>
+                </div>
+            </div>
+        </div>
         <!-- js类 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'js-1'">
             <div class="content">
@@ -273,7 +319,6 @@
                 </div>
             </div>
         </div>
-
         <!-- 微信小程序 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'wx-1'">
             <div class="content">
@@ -356,7 +401,7 @@
             </div>
         </div>
         <!-- 视频 -->
-        <div class="list-con w1000" id="list-con" v-if="index == 'm-1'">
+        <div class="list-con w1000 mobile" id="list-con" v-if="index == 'm-1'">
             <video-player class="video-player vjs-custom-skin"
             ref="videoPlayer"
             :playsinline="true"
@@ -399,12 +444,7 @@ export default {
                 sources: [{
                     withCredentials: false,
                     type: "application/x-mpegURL",
-                    // src: "https://logos-channel.scaleengine.net/logos-channel/live/biblescreen-ad-free/playlist.m3u8",
-                    // src: 'http://aldirect.hls.huya.com/huyalive/30765679-2504742278-10757786168918540288-3049003128-10057-A-0-1_1200.m3u8',
                     src: this.$route.query.url
-                },{
-                    // src: 'https://pan.baidu.com/s/1ha0lBVQeYf_nf-3qmnLang',
-                    // type: 'video/mp4'
                 }],
                 poster: "http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg", //你的封面地址
                 // width: document.documentElement.clientWidth,
@@ -496,6 +536,7 @@ font-weight: bold;}
 .content .part p.p span {display: block}
 .content .part p.p span.bg {background: #eef0f4;padding: 10px 20px;font-size: 15px;color: #666666;}
 .content .part p span.img {display: block;width: 733px;height: 437px; background: url('../assets/image/1.jpg')no-repeat center;background-size: 100% 100%;}
+.content .part p img {width: 100%;}
 .content .part p li {margin-bottom: 20px;}
 .content .part p li:last-child {margin-bottom: 0;}
 .content .part p li a {font-size: 16px;color: #64854c;font-weight: bold;}
@@ -504,7 +545,8 @@ font-weight: bold;}
 .content .part .im-2 {display: block;width: 399px;height: 257px; background: url('../assets/image/8.jpg')no-repeat center;background-size: 100% 100%;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
-    .list-con video {height: 6rem;}
+    .mobile {padding: .18rem .15rem!important;}
+    /* .list-con video {height: 6rem;} */
     .w1000 {width: 100%;}
     .content p {line-height: .46rem;margin: .3rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}
@@ -516,7 +558,9 @@ font-weight: bold;}
     .content .part .im-1 {width: 100%;height: 3.50rem;}
     .content .part .im-2 {width: 3.99rem;height: 2.57rem;}
     #top-head {height: 3rem;margin-bottom: .3rem;line-height: 3rem;}
-    #top-head .img {margin-top: .2rem;}
+    #top-head .img {margin-top: .2rem;width: 2.56rem;height: 2.56rem;}
+    #top-head .img img {width: 100%;height: 100%;}
+    .title {font-size: .3rem;height: .5rem;line-height: .5rem;margin-bottom: .3rem;border-bottom-left-radius: .45rem;border-top-right-radius: .45rem;}
 }
 </style>
 

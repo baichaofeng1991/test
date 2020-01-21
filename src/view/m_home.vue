@@ -70,6 +70,177 @@
                 </li>
             </ul>
         </div>
+
+        <div class="list-con w1000" v-if="receive == 6">
+            <ul>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'毒液',url:'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8'}}">《毒液》</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'轮播',url:'http://dlhls.cdn.zhanqi.tv/zqlive/35349_iXsXw.m3u8'}}">《轮播》</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'动作电影',url:'http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8'}}">动作电影</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'科幻电影',url:'http://aldirect.hls.huya.com/huyalive/28466698-2689656864-11551988268341919744-2847699194-10057-A-0-1_1200.m3u8'}}">科幻电影</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'速度与激情',url:'http://aldirect.hls.huya.com/huyalive/29169025-2686219962-11537226886652362752-2710080226-10057-A-0-1_1200.m3u8'}}">速度与激情</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'赌博电影',url:'http://js.hls.huya.com/huyalive/29106097-2689446042-11551082794746642432-2789253870-10057-A-0-1_1200.m3u8'}}">赌博电影</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'赌神全集新木乃伊',url:'http://aldirect.hls.huya.com/huyalive/29169025-2686220018-11537227127170531328-2847699120-10057-A-1524041208-1_1200.m3u8'}}">赌神全集新木乃伊</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'王晶导演',url:'https://aldirect.hls.huya.com/huyalive/94525224-2579683592-11079656661667807232-2847687574-10057-A-0-1_1200.m3u8'}}">王晶导演</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'徐克导演',url:'http://tx.hls.huya.com/huyalive/29106097-2689447148-11551087544980471808-2789253872-10057-A-1525420294-1.m3u8'}}">徐克导演</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'黄渤',url:'https://aldirect.hls.huya.com/huyalive/30765679-2554414680-10971127511022305280-3048991634-10057-A-0-1_1200.m3u8'}}">黄渤</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'徐峥',url:'https://aldirect.hls.huya.com/huyalive/29106097-2689278568-11550363499393712128-2710090468-10057-A-0-1_1200.m3u8'}}">徐峥</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'斯坦森',url:'http://tx.hls.huya.com/huyalive/30765679-2554414705-10971127618396487680-3048991636-10057-A-0-1.m3u8'}}">斯坦森</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'黄百鸣',url:'http://ws4.streamhls.huya.com/huyalive/29169025-2686220062-11537227316149092352-2777037828-10057-A-1524041857-1_1200/playlist.m3u8'}}">黄百鸣</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'陈小春',url:'http://ws4.streamhls.huya.com/huyalive/30765679-2523417522-10837995731143360512-2777068634-10057-A-0-1_1200/playlist.m3u8'}}">陈小春</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'黄日华',url:'http://ws4.streamhls.huya.com/huyalive/30765679-2523417506-10837995662423883776-2777071322-10057-A-0-1_1200/playlist.m3u8'}}">黄日华</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'甄子丹',url:'http://ws4.streamhls.huya.com/huyalive/29169025-2686219938-11537226783573147648-2847699096-10057-A-1524024759-1_1200/playlist.m3u8'}}">甄子丹</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'李连杰',url:'http://js.hls.huya.com/huyalive/94525224-2460686093-10568566295157014528-2789253848-10057-A-0-1_1200.m3u8'}}">李连杰</router-link>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'刘德华',url:'http://aldirect.hls.huya.com/huyalive/94525224-2467341872-10597152648291418112-2789274550-10057-A-0-1_1200.m3u8'}}">刘德华</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'成龙',url:'http://aldirect.hls.huya.com/huyalive/94525224-2460685722-10568564701724147712-2789253838-10057-A-0-1_1200.m3u8'}}">成龙</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'周星驰',url:'http://aldirect.hls.huya.com/huyalive/94525224-2460685313-10568562945082523648-2789274524-10057-A-0-1_1200.m3u8'}}">周星驰</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'林正英',url:'http://js.hls.huya.com/huyalive/94525224-2460686034-10568566041753944064-2789274542-10057-A-0-1_1200.m3u8'}}">林正英</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'CCTV-1综合',url:'http://223.110.242.130:6610/gitv/live1/G_CCTV-1-HQ/1.m3u8'}}">CCTV-1综合</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'湖南卫视高清',url:'http://112.50.243.8/PLTV/88888888/224/3221225827/1.m3u8'}}">湖南卫视高清</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'江苏卫视高清',url:'http://112.50.243.8/PLTV/88888888/224/3221225847/1.m3u8'}}">江苏卫视高清</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'东方卫视高清',url:'http://112.50.243.8/PLTV/88888888/224/3221225828/1.m3u8'}}">东方卫视高清</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'北京卫视高清',url:'http://112.50.243.8/PLTV/88888888/224/3221225826/1.m3u8'}}">北京卫视高清</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv动作电影',url:'http://183.207.249.15/PLTV/3/224/3221225529/index.m3u8'}}">Newtv动作电影</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv惊悚悬疑',url:'http://183.207.249.7/PLTV/3/224/3221225561/index.m3u8'}}">Newtv惊悚悬疑</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv精品电影',url:'http://183.207.249.14/PLTV/3/224/3221225567/index.m3u8'}}">Newtv精品电影</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv明星大片',url:'http://183.207.249.14/PLTV/3/224/3221225535/index.m3u8'}}">Newtv明星大片</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv家庭剧场',url:'http://183.207.249.14/PLTV/3/224/3221225549/index.m3u8'}}">Newtv家庭剧场</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv精品大剧',url:'http://183.207.249.14/PLTV/3/224/3221225569/index.m3u8'}}">Newtv精品大剧</router-link>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'m-1',title:'Newtv金牌综艺',url:'http://183.207.249.16/PLTV/3/224/3221225559/index.m3u8'}}">Newtv金牌综艺</router-link>
+                    </p>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
