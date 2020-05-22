@@ -1,4 +1,5 @@
-/**
+/** 
+     * 点线动态背景
      * Copyright (c) 2016 hustcc
      * License: MIT
      * Version: v1.0.1

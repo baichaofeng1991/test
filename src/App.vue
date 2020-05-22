@@ -11,7 +11,7 @@ export default {
   mounted() {
     if (this._isMobile()) {
       // alert("手机端");
-      this.$router.replace('/m_home');
+      this.$router.replace(/* '/m_home' */'/pc_home');
     } else {
       // alert("pc端");
       this.$router.replace('/pc_home');
@@ -52,7 +52,7 @@ em,i{font-weight:normal;font-style:normal;font-size:100%;}
 h1,h2,h3,h4,h5,h6,em{font-weight:normal;}
 .clearfix{*zoom:1;}
 .clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
-a:hover{text-decoration: none; color:#d7000f;} 
+a:hover{text-decoration: none; color:#d7000f;}
 img{vertical-align:middle;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}/* 文本省略 */
 .hide,.none{display:none}
@@ -65,4 +65,5 @@ img{vertical-align:middle;}
 .fr{float:right;}
 .w1000{ width: 1000px; margin: 0 auto; position:relative;}
 a {color: #3e4146;text-decoration: none;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;}/* ease开始和结束慢，中间快 || linear：匀速 || ease-in：加速 || ease-out：减速*/
+
 </style>

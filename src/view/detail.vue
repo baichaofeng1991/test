@@ -3,10 +3,10 @@
         <!-- <my-head></my-head> -->
         
         <div class="part-head" id="top-head">
-            <div class="img"><img src="../assets/image/user.png" alt=""></div>
+            <div class="img"><router-link to="/pc_home"><img src="../assets/image/user.png" alt=""></router-link></div>
         </div>
         <div class="title w1000">{{this.$route.query.title}}</div>
-
+        <!-- vue -->
         <div class="list-con w1000" id="list-con" v-if="index == 'vue-1'">
             <div class="content">
                 <div class="part">
@@ -292,6 +292,41 @@
                 </div>
             </div>
         </div>
+        <!-- Vue解决接口访问跨域问题 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'vue-5'">
+            <div class="content">
+                <div class="part">
+                    <label>Vue解决接口访问跨域问题</label>
+                    <p>Vue解决跨域问题的原理就是代理，具体操作如下</p>
+                    <p>1.打开 config -> index.js</p>
+                    <p>2.找到proxyTable</p>
+                    <p>3.粘贴 如下代码，'https://www.baidu.com' 换成要访问的的api域名，记住是域名，不是整个api地址。代码（效果图）如下</p>
+                    <p><img src="../assets/image/42.png" alt=""></p>
+                    <p>配置如下（方便复制粘贴）</p>
+                    <!-- <p><img src="../assets/image/43.png" alt=""></p> -->
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            dev: {
+                                env: require('./dev.env'),
+                                port: 8080,
+                                autoOpenBrowser: true,
+                                assetsSubDirectory: 'static',
+                                assetsPublicPath: '/',
+                                proxyTable: {
+                                    '/api':{
+                                        target:"https://www.baidu.com/",//这里设置你要访问的域名（或IP+端口）
+                                        changeOrigin:true,
+                                        pathRewrite:{
+                                            '^/base_api':''//base_api是自定义用来代替http://www.baidu.com/的
+                                        }
+                                    }
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
         <!-- js类 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'js-1'">
             <div class="content">
@@ -319,6 +354,112 @@
                 </div>
             </div>
         </div>
+        <div class="list-con w1000" id="list-con" v-if="index == 'js-2'">
+            <div class="content">
+                <div class="part">
+                    <label>promise应用</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            //乘法运算方法
+                            multiply(input) {
+                                return new Promise(function (resolve, reject) {
+                                    console.log('记录：', input +'*'+ input +' = '+ input * input)
+                                    setTimeout(resolve, 500, input * input);
+                                });
+                            },
+
+                            // 0.5秒后返回input+input的计算结果:
+                            //加法运算方法
+                            add(input) {
+                                return new Promise(function (resolve, reject) {
+                                    console.log('记录：', input +'+'+ input +' = '+ (input + input))
+                                    setTimeout(resolve, 500, input + input);
+                                });
+                            },
+
+                            var p = new Promise(function (resolve, reject) {
+                                console.log('start new Promise...');
+                                resolve(3);
+                            });
+
+                            p.then(this.multiply)//结果9
+                            .then(this.add)//结果18
+                            .then(this.multiply)//结果324
+                            .then(this.add)//结果648
+                            .then(function (result) {
+                                console.log('Got value:' + result)//最终结果648
+                            });
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="list-con w1000" id="list-con" v-if="index == 'js-3'">
+            <div class="content">
+                <div class="part">
+                    <label>1.安装highlight.js</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            npm install highlight.js
+                        </code>
+                    </pre>
+                    <label>2.在main.js中引入highlight.js</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            import hljs from 'highlight.js';
+                            import 'highlight.js/styles/atom-one-dark.css'	//样式
+                        </code>
+                    </pre>
+                    <label>3.在main.js中自定义指令</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            Vue.directive('highlight',function (el) {
+                                let blocks = el.querySelectorAll('pre code');
+                                blocks.forEach((block)=>{
+                                    hljs.highlightBlock(block)
+                                })
+                            })
+                        </code>
+                    </pre>
+                    <label>4.在需要高亮内容标签使用v-highlight</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            div
+                                pre v-highlight
+                                    code class="lang-javascript"
+                                        {{codeText}}
+                                    /code
+                                /pre
+                            /div
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="list-con w1000" id="list-con" v-if="index == 'js-5'">
+            <div class="content">
+                <div class="part">
+                    <label>JS如何判断滚动条是否滚到底部</label>
+                    <p>判断滚动条到底部，需要用到DOM的三个属性值，即scrollTop、clientHeight、scrollHeight。</p>
+                    <p>scrollTop为滚动条在Y轴上的滚动距离。</p>
+                    <p>clientHeight为内容可视区域的高度。</p>
+                    <p>scrollHeight为内容可视区域的高度加上溢出（滚动）的距离。</p>
+                    <p>从这个三个属性的介绍就可以看出来，滚动条到底部的条件即为scrollTop + clientHeight == scrollHeight。</p>
+                    <p>代码如下（兼容不同的浏览器）。</p>
+                    <p>let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;</p>
+                    <p>let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;</p>
+                    <p>let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;</p>
+                    <p>避免没有数据的时候 重复执行 scrollHeight > clientHeight </p>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            if(scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight) {
+                                this.loadmore();
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
         <!-- 微信小程序 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'wx-1'">
             <div class="content">
@@ -337,6 +478,72 @@
                 </div>
             </div>
         </div>
+        <div class="list-con w1000" id="list-con" v-if="index == 'wx-2'">
+            <div class="content">
+                <div class="part">
+                    <label>1.wxml</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            view class="content"
+                                block wx:key="{{img}}" wx:for="{{img}}"
+                                    view class="pic-list"
+                                    //listIndex大于item.index时，图片显示
+                                    image src="{{ listIndex > index ? item : '' }}" class="pic {{listIndex > index ?'Action':''}}" mode="widthFix" 
+                                    /view
+                                /block
+                            /view
+                        </code>
+                    </pre>
+                    <label>2.wxss</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            page {
+                                background: #fff;
+                            }
+                            .pic-list {
+                                width: 100vw;
+                                background: #efeff4;
+                                margin: 3vw 0;
+                            }
+                            .pic {
+                                width: 100%;
+                                display: block;
+                                opacity: 0;
+                                transition: opacity 0.3s linear 0.3s;
+                            }
+                            .Action {
+                                opacity: 1;
+                            }
+                        </code>
+                    </pre>
+                    <label>3.js</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            onShow: function () {
+                                //获取屏幕尺寸
+                                const screenWidth = wx.getSystemInfoSync().windowWidth
+                                const screenHeight = wx.getSystemInfoSync().windowHeight
+                                this.setData({
+                                //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
+                                listIndex: screenHeight / (screenWidth * 0.63),
+                                screenWidth: screenWidth,
+                                screenHeight: screenHeight
+                                })
+                            },
+                            // 滚动事件 
+                            onPageScroll(e) { 
+                                //滚动距离+屏幕高度换算vw倍数
+                                let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.63)
+                                this.setData({
+                                listIndex: listIndex
+                                })
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
         <!-- 前端对象分类 -->
         <div class="list-con w1000" id="list-con" v-if="index == 'ht-1'">
             <div class="content">
@@ -415,6 +622,8 @@
 <script>
 import myHead from '../components/header';
 
+import { Make } from "../assets/js/index";
+
 import "vue-video-player/src/custom-theme.css";
 // videojs
 import videojs from 'video.js'
@@ -469,6 +678,7 @@ export default {
     },
     //一般用来向后端发起请求，拿到数据后做一些业务处理。该函数在模版渲染完成后才被调用。DOM操作一般是在mounted钩子函数中进行。
     mounted() {
+        this.followDoctor()
         
         this.index = this.$route.query.index
         console.log('获取路由传递过来的参数',this.$route.query.index)
@@ -478,14 +688,14 @@ export default {
         console.log('获取Vuex中的数据',this.$store.state.count)
         console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
 
-        this.timer = setInterval(() => {
-            if(this.n == this.arrColor.length) {
-                this.n = 0
-            }
-            // document.getElementById('top-head').style.background = this.arrColor[this.n]
-            document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
-            this.n++
-        }, 2500);
+        // this.timer = setInterval(() => {
+        //     if(this.n == this.arrColor.length) {
+        //         this.n = 0
+        //     }
+        //     // document.getElementById('top-head').style.background = this.arrColor[this.n]
+        //     document.getElementById('list-con').style.borderColor = this.arrColor[this.n]
+        //     this.n++
+        // }, 2500);
     },
     //组件销毁之前执行
     beforeDestroy() {
@@ -510,7 +720,30 @@ export default {
             // console.log(options)
             return options
             }
-        }
+        },
+
+        //调用api示例
+        followDoctor() {
+            //请求接口基础写法
+            this.$ajax.get('/api/KZCDBasice/GetAllMagazinePhoto',{       // 还可以直接把参数拼接在url后边
+                params:{
+                    id: 136
+                }
+            }).then(function(res){
+                console.log('数据',res)
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            /* 封装接口调用方式 */
+            let parames = {
+                id: 137
+            };
+            Make.followDoctor(parames).then(res => {
+                console.log('接口返回数据',res)
+                console.log('后台数据',res.data)
+            });
+        },
 
     },
     components: {
@@ -520,9 +753,11 @@ export default {
 </script>
 
 <style scoped>
-.list-con {background: #ffffff;box-sizing: border-box;padding: 30px;border-top: 10px solid #FF0000;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000;border-radius: 25px;}
+.list-con {background: #ffffff;box-sizing: border-box;padding: 30px;/* border-top: 10px solid #FF0000;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000; */border-radius: 25px;}
 .title {font-size: 30px;font-weight: bold;color: #ffffff;text-align: center;background: #21292f;height: 50px;line-height: 50px;margin-bottom: 15px;border-bottom-left-radius: 45px;border-top-right-radius: 45px;}
 
+.hljs {font-size: 14px;font-family: "Source Code Pro","DejaVu Sans Mono","Ubuntu Mono","Anonymous Pro","Droid Sans Mono",Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,"PingFang SC","Microsoft YaHei",sans-serif;}
+pre {margin: 0;display: grid;}
 
 /* .part-head {width: 100%;height: 40px;background: #FF0000;} */
 #top-head {background: #21292f;text-align: center;height: 300px;margin-bottom: 30px;line-height: 300px;}

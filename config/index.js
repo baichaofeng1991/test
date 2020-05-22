@@ -8,9 +8,23 @@ module.exports = {
   dev: {
 
     // Paths
+    // assetsSubDirectory: 'static',
+    // assetsPublicPath: '/',
+    // proxyTable: {},
+    env: require('./dev.env'),
+    port: 8080,
+    autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api':{
+            target:"https://app.chuandong.com/",//这里设置你要访问的域名（或IP+端口）
+            changeOrigin:true,
+            pathRewrite:{
+              '^/base_api':''//base_api是自定义用来代替http://www.baidu.com/的
+            }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

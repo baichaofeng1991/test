@@ -1,7 +1,7 @@
 <template>
     <div>
         <my-head :index = 'num' @transmit = 'transmitData'></my-head>
-
+        <!-- vue -->
         <div class="list-con w1000" v-if="receive == 1">
             <ul>
                 <li>
@@ -11,8 +11,10 @@
                     <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
                 </li>
                 <li>
-                    <p class="title">vue移动端h5页面根据屏幕适配的四种方案</p>
-                    <p class="intro">最近做了两个关于h5页面对接公众号的项目，不得不提打开微信浏览器内置地图导航的功能确实有点恶心。下次想起来了的话，进行总结分享一下如何处理。在vue移动端h5页面当中，其中适配是经常会遇到的问题，这块主要有死个方法可以适用。</p>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'vue-2',title:'vue中使用axios'}}">vue中使用axios</router-link>
+                    </p>
+                    <p class="intro">...........</p>
                 </li>
                 <li>
                     <p class="title">
@@ -20,8 +22,21 @@
                     </p>
                     <p class="intro">创建vue项目步骤，将vue项目上传至git中的步骤</p>
                 </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'vue-4',title:'vue中使用vue-video-player'}}">vue中使用vue-video-player</router-link>
+                    </p>
+                    <p class="intro">。。。。。。。。</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'vue-5',title:'Vue解决接口访问跨域问题'}}">Vue解决接口访问跨域问题</router-link>
+                    </p>
+                    <p class="intro">。。。。。。。。</p>
+                </li>
             </ul>
         </div>
+        <!-- jq -->
         <div class="list-con w1000" v-if="receive == 2">
             <ul>
                 <li>
@@ -34,10 +49,11 @@
                 </li>
                 <li>
                     <p class="title">Vue面试知识点总结</p>
-                    <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
+                    <p class="intro">。。。。。。。。。。</p>
                 </li>
             </ul>
         </div>
+        <!-- js -->
         <div class="list-con w1000" v-if="receive == 3">
             <ul>
                 <li>
@@ -48,7 +64,7 @@
                 </li>
             </ul>
         </div>
-
+        <!-- 小程序 -->
         <div class="list-con w1000" v-if="receive == 4">
             <ul>
                 <li>
@@ -59,7 +75,7 @@
                 </li>
             </ul>
         </div>
-
+        <!-- 前端对象 -->
         <div class="list-con w1000" v-if="receive == 5">
             <ul>
                 <li>
@@ -70,7 +86,7 @@
                 </li>
             </ul>
         </div>
-
+        <!-- 娱乐 -->
         <div class="list-con w1000" v-if="receive == 6">
             <ul>
                 <li>

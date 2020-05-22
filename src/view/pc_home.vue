@@ -1,7 +1,7 @@
 <template>
     <div>
         <my-head :index = 'num' @transmit = 'transmitData'></my-head>
-
+        <!-- vue -->
         <div class="list-con w1000" v-if="receive == 1">
             <ul>
                 <li>
@@ -28,24 +28,26 @@
                     </p>
                     <p class="intro">。。。。。。。。</p>
                 </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'vue-5',title:'Vue解决接口访问跨域问题'}}">Vue解决接口访问跨域问题</router-link>
+                    </p>
+                    <p class="intro">。。。。。。。。</p>
+                </li>
             </ul>
         </div>
+        <!-- JQ -->
         <div class="list-con w1000" v-if="receive == 2">
             <ul>
                 <li>
-                    <p class="title"><router-link to='/detail'>JQ</router-link></p>
-                    <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
-                </li>
-                <li>
-                    <p class="title">vue移动端h5页面根据屏幕适配的四种方案</p>
-                    <p class="intro">最近做了两个关于h5页面对接公众号的项目，不得不提打开微信浏览器内置地图导航的功能确实有点恶心。下次想起来了的话，进行总结分享一下如何处理。在vue移动端h5页面当中，其中适配是经常会遇到的问题，这块主要有死个方法可以适用。</p>
-                </li>
-                <li>
-                    <p class="title">Vue面试知识点总结</p>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'',title:''}}">JQ</router-link>
+                    </p>
                     <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
                 </li>
             </ul>
         </div>
+        <!-- js -->
         <div class="list-con w1000" v-if="receive == 3">
             <ul>
                 <li>
@@ -54,9 +56,33 @@
                     </p>
                     <p class="intro">............</p>
                 </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'js-2',title:'js promise应用'}}">js promise应用</router-link>
+                    </p>
+                    <p class="intro">............</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'js-3',title:'js 代码高亮highlight.js使用'}}">js 代码高亮highlight.js使用</router-link>
+                    </p>
+                    <p class="intro">............</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'js-4',title:'js 前端请求后台接口方法汇总'}}">js 前端请求后台接口方法汇总</router-link>
+                    </p>
+                    <p class="intro">............</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'js-5',title:'JS如何判断滚动条是否滚到底部'}}">JS如何判断滚动条是否滚到底部</router-link>
+                    </p>
+                    <p class="intro">............</p>
+                </li>
             </ul>
         </div>
-
+        <!-- 小程序 -->
         <div class="list-con w1000" v-if="receive == 4">
             <ul>
                 <li>
@@ -65,9 +91,15 @@
                     </p>
                     <p class="intro">因为业务需要，每个http请求都要加上一个请求头，所以每次都要写很多重复的代码。现在尝试把wx.request简单的封装了一下，调用一个request方法，每次请求自动携带header头信息，这样就省事多了，包含了常见的get post put delete 四种请求方法，支持Promise方式调用。</p>
                 </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'wx-2',title:'小程序图片懒加载'}}">小程序图片懒加载</router-link>
+                    </p>
+                    <p class="intro">。。。。。。。。。。</p>
+                </li>
             </ul>
         </div>
-
+        <!-- 前端对象 -->
         <div class="list-con w1000" v-if="receive == 5">
             <ul>
                 <li>
@@ -78,7 +110,7 @@
                 </li>
             </ul>
         </div>
-
+        <!-- 娱乐电影 -->
         <div class="list-con w1000" v-if="receive == 6">
             <ul>
                 <li>
@@ -153,7 +185,77 @@
                 </li>
             </ul>
         </div>
-
+        <!-- 工具类网站 -->
+        <div class="list-con w1000" v-if="receive == 7">
+            <ul>
+                <li>
+                    <p class="title">
+                        <span class="name">Unicode编码转换网站：</span>
+                        <a class="url" href="http://tool.chinaz.com/tools/unicode.aspx" target="_blank">http://tool.chinaz.com/tools/unicode.aspx</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">廖雪峰学习网站：</span>
+                        <a class="url" href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544#0" target="_blank">https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544#0</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">css3参考手册：</span>
+                        <a class="url" href="http://caibaojian.com/css3/values/color/transparent.htm" target="_blank">http://caibaojian.com/css3/values/color/transparent.htm</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">猫云插件工具平台（稳定、快速、免费的前端开源项目 CDN 加速服务）：</span>
+                        <a class="url" href="https://www.bootcdn.cn/" target="_blank">https://www.bootcdn.cn/</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">PC端轮播图插件SuperSlide：</span>
+                        <a class="url" href="http://www.superslide2.com/" target="_blank">http://www.superslide2.com/</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">博客文章代码块高亮转换工具：</span>
+                        <a class="url" href="http://www.planetb.ca/syntax-highlight-word" target="_blank">http://www.planetb.ca/syntax-highlight-word</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">（博客园）移动端上遇到的各种坑与相对解决方案：</span>
+                        <a class="url" href="https://www.cnblogs.com/baihuaxiu/p/6654496.html" target="_blank">https://www.cnblogs.com/baihuaxiu/p/6654496.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">拿去吧：</span>
+                        <a class="url" href="https://www.naqub.cn/2354.html" target="_blank">https://www.naqub.cn/2354.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name"></span>
+                        <a class="url" href="" target="_blank"></a>
+                    </p>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -187,8 +289,7 @@ export default {
         //接收子组件中传递来的数据方法
         transmitData(data) {
             this.receive = data
-        }
-
+        },
     },
     components: {
         myHead
@@ -201,6 +302,18 @@ export default {
 .list-con li {padding: 30px 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
 .list-con li p.title {font-size: 20px;font-weight: bold;color: #333333;margin-bottom: 10px;cursor: pointer;}
+.list-con li p.title span.name {font-size: 14px;color: #999999;font-weight: 400;}
+.list-con li p.title a.url {font-size: 14px;color: cornflowerblue;font-weight: 400;}
 .list-con li p.title:hover {color: #d72b00;}
 .list-con li p.intro {font-size: 14px;color: #666666;font-weight: 400;line-height: 24px;}
+@media screen and (max-width:640px){
+.list-con {background: #ffffff;margin-top: .2rem;box-sizing: border-box;padding: .3rem;}
+.list-con li {padding: .3rem 0;border-bottom: 1px solid #eeeeee;}
+.list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
+.list-con li p.title {font-size: .3rem;font-weight: bold;color: #333333;margin-bottom: .1rem;cursor: pointer;}
+.list-con li p.title span.name {font-size: .28rem;color: #999999;font-weight: 400;}
+.list-con li p.title a.url {font-size: .28rem;color: cornflowerblue;font-weight: 400;}
+.list-con li p.intro {font-size: .28rem;color: #666666;font-weight: 400;line-height: .48rem;}
+.w1000 {width: 100%}
+}
 </style>

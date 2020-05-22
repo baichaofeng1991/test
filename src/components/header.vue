@@ -2,7 +2,7 @@
     <div>
         <div class="head">
             <div class="w1000">
-                <img src="../assets/logo.png" alt="">
+               <img src="../assets/logo.png" alt="">
             </div>
             <div class="nav">
                 <div class="w1000">
@@ -12,7 +12,8 @@
                         <li @click="route(3)">JavaScript</li><span>|</span>
                         <li @click="route(4)">小程序</li><span>|</span>
                         <li @click="route(5)">前端对象</li><span>|</span>
-                        <li @click="route(6)">休闲/娱乐</li>
+                        <li @click="route(6)">休闲/娱乐</li><span>|</span>
+                        <li @click="route(7)">工具网站</li>
                     </ul>
                 </div>
             </div>
@@ -59,7 +60,7 @@ export default {
 .head .nav {background: #379be9;height: 40px;line-height: 40px;}
 .head .nav ul {height: 100%;}
 .head .nav ul span {color: #666666;font-size: 14px}
-.head .nav li {display: inline-block;width: 160px;text-align: center;color: #ffffff;font-weight: bold;font-size: 16px;cursor: pointer;}
+.head .nav li {display: inline-block;text-align: center;color: #ffffff;font-weight: bold;font-size: 16px;cursor: pointer;padding: 0 39px;}
 .head .nav li:hover {color: #ff3344;}
 
 @media screen and (max-width:640px){
