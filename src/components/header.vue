@@ -13,7 +13,8 @@
                         <li @click="route(4)">小程序</li><span>|</span>
                         <li @click="route(5)">前端对象</li><span>|</span>
                         <li @click="route(6)">休闲/娱乐</li><span>|</span>
-                        <li @click="route(7)">工具网站</li>
+                        <li @click="route(7)">工具网站</li><span>|</span>
+                        <li @click="route(8)">css</li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +61,7 @@ export default {
 .head .nav {background: #379be9;height: 40px;line-height: 40px;}
 .head .nav ul {height: 100%;}
 .head .nav ul span {color: #666666;font-size: 14px}
-.head .nav li {display: inline-block;text-align: center;color: #ffffff;font-weight: bold;font-size: 16px;cursor: pointer;padding: 0 39px;}
+.head .nav li {display: inline-block;text-align: center;color: #ffffff;font-weight: bold;font-size: 16px;cursor: pointer;padding: 0 32px;}
 .head .nav li:hover {color: #ff3344;}
 
 @media screen and (max-width:640px){

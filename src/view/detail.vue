@@ -3,7 +3,7 @@
         <!-- <my-head></my-head> -->
         
         <div class="part-head" id="top-head">
-            <div class="img"><router-link to="/pc_home"><img src="../assets/image/user.png" alt=""></router-link></div>
+            <div class="img"><router-link to="/m_home"><img src="../assets/image/user.png" alt=""></router-link></div>
         </div>
         <div class="title w1000">{{this.$route.query.title}}</div>
         <!-- vue -->
@@ -400,14 +400,14 @@
                     <label>1.安装highlight.js</label>
                     <pre v-highlight>
                         <code class="lang-javascript">
-                            npm install highlight.js
+                            npm install highlight.js;
                         </code>
                     </pre>
                     <label>2.在main.js中引入highlight.js</label>
                     <pre v-highlight>
                         <code class="lang-javascript">
                             import hljs from 'highlight.js';
-                            import 'highlight.js/styles/atom-one-dark.css'	//样式
+                            import 'highlight.js/styles/atom-one-dark.css';	//样式
                         </code>
                     </pre>
                     <label>3.在main.js中自定义指令</label>
@@ -524,10 +524,10 @@
                                 const screenWidth = wx.getSystemInfoSync().windowWidth
                                 const screenHeight = wx.getSystemInfoSync().windowHeight
                                 this.setData({
-                                //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
-                                listIndex: screenHeight / (screenWidth * 0.63),
-                                screenWidth: screenWidth,
-                                screenHeight: screenHeight
+                                    //获取页面初始状态图片数量，0.63为图片容器的高度值(63vw)，将代码中0.63改为你的容器对应高度
+                                    listIndex: screenHeight / (screenWidth * 0.63),
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight
                                 })
                             },
                             // 滚动事件 
@@ -535,7 +535,7 @@
                                 //滚动距离+屏幕高度换算vw倍数
                                 let listIndex = (e.scrollTop + this.data.screenHeight) / (this.data.screenWidth * 0.63)
                                 this.setData({
-                                listIndex: listIndex
+                                    listIndex: listIndex
                                 })
                             }
                         </code>
@@ -616,6 +616,162 @@
             @ready="playerReadied">
             </video-player>
         </div>
+        <!-- css样式 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'cs-1'">
+            <div class="content">
+                <div class="part">
+                    <label>transform语法</label>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            /* Keyword values 关键字值 */
+                            transform: none;
+
+                            /* Function values 函数值 */
+                            transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+                            transform: translate(12px, 50%);
+                            transform: translateX(2em);
+                            transform: translateY(3in);
+                            transform: scale(2, 0.5);
+                            transform: scaleX(2);
+                            transform: scaleY(0.5);
+                            transform: rotate(0.5turn);
+                            transform: skew(30deg, 20deg);
+                            transform: skewX(30deg);
+                            transform: skewY(1.07rad);
+                            transform: matrix3d(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0);
+                            transform: translate3d(12px, 50%, 3em);
+                            transform: translateZ(2px);
+                            transform: scale3d(2.5, 1.2, 0.3);
+                            transform: scaleZ(0.3);
+                            transform: rotate3d(1, 2.0, 3.0, 10deg);
+                            transform: rotateX(10deg);
+                            transform: rotateY(10deg);
+                            transform: rotateZ(10deg);
+                            transform: perspective(17px);
+
+                            /* Multiple function values 多个函数值 */
+                            transform: translateX(10px) rotate(10deg) translateY(5px);
+
+                            /* Global values */
+                            transform: inherit;
+                            transform: initial;
+                            transform: unset;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="list-con w1000" id="list-con" v-if="index == 'cs-2'">
+            <div class="content">
+                <div class="part">
+                    <label>display: none</label>
+                    <p>none 是 CSS 1 就提出来的属性，将元素设置为none的时候既不会占据空间，也无法显示，相当于该元素不存在。</p>
+                </div>
+                <div class="part">
+                    <label>display: inline</label>
+                    <p>inline也是 CSS 1 提出的属性，它主要用来设置行内元素属性，设置了该属性之后设置高度、宽度都无效，同时text-align属性设置也无效，但是设置了line-height会让inline元素居中</p>
+                </div>
+                <div class="part">
+                    <label>display: block</label>
+                    <p>设置元素为块状元素，如果不指定宽高，默认会继承父元素的宽度，并且独占一行，即使宽度有剩余也会独占一行，高度一般以子元素撑开的高度为准，当然也可以自己设置宽度和高度。</p>
+                    <p>在设计的过程中有时需要设计一个div宽高都是整个屏幕，整个时候宽度很好设置，可是高度一般很难设置，因为页面一般都是可以滚动的，所以高度一般可变，所以这个时候可以使用一个小技巧，</p>
+                    <p>基本原理：div继承的是父元素body的高度，body是继承html的高度，html是继承的浏览器屏幕的高度。</p>
+                </div>
+                <div class="part">
+                    <label>display: list-item</label>
+                    <p>此属性默认会把元素作为列表显示，要完全模仿列表的话还需要加上 list-style-position，list-style-type</p>
+                </div>
+                <div class="part">
+                    <label>display: inline-block</label>
+                    <p>inline-block为 CSS 2.1 新增的属性。 inline-block既具有block的宽高特性又具有inline的同行元素特性。 通过inline-block结合text-align: justify 还可以实现固定宽高的列表两端对齐布局</p>
+                </div>
+                <div class="part">
+                    <label>display: table</label>
+                    <p>table 此元素会作为块级表格来显示（类似table），表格前后带有换行符。CSS表格能够解决所有那些我们在使用绝对定位和浮动定位进行多列布局时所遇到的问题。例如，display:table的CSS声明能够让一个HTML元素和它的子节点像table元素一样。使用基于表格的CSS布局，使我们能够轻松定义一个单元格的边界、背景等样式， 而不会产生因为使用了table那样的制表标签所导致的语义化问题。</p>
+                </div>
+                <div class="part">
+                    <label>display: flex</label>
+                    <p>flex是一种弹性布局属性<br>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。<br>主要属性有两大类：容器属性和项目的属性</p>
+                    <p>容器属性</p>
+                    <p>
+                        <span>1.flex-direction: 属性决定主轴的方向（即项目的排列方向）。</span><br>
+                        <span>2.flex-wrap: 默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。</span><br>
+                        <span>3.flex-flow: 属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</span><br>
+                        <span>4.justify-content: 属性定义了项目在主轴上的对齐方式。</span><br>
+                        <span>5.align-items: 属性定义项目在交叉轴上如何对齐。</span><br>
+                        <span>6.align-content: 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</span>
+                    </p>
+                    <p>项目属性</p>
+                    <p>
+                        <span>1.order: 定义项目的排列顺序。数值越小，排列越靠前，默认为0</span><br>
+                        <span>2.flex-grow: 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</span><br>
+                        <span>3.flex-shrink: 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</span><br>
+                        <span>4.flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（mainsize）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</span><br>
+                        <span>5.flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</span><br>
+                        <span>6.align-self:属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</span>
+                    </p>
+                </div>
+                <div class="part">
+                    <label>display: -webkit-box</label>
+                    <p>容器属性</p>
+                    <p>
+                        <span>1.display: box 该显示样式的新值可将此元素及其直系子代加入弹性框模型中。Flexbox 模型只适用于直系子代。</span><br>
+                        <span>2.box-orient 值：horizontal | vertical | inherit框的子代是如何排列的？还有两个值：inline-axis（真正的默认值）和 block-axis，但是它们分别映射到水平和垂直方向。</span><br>
+                        <span>3.box-pack 值：start | end | center | justify 设置沿 box-orient轴的框排列方式。因此，如果 box-orient 是水平方向，就会选择框的子代的水平排列方式，反之亦然。</span><br>
+                        <span>4.box-align 值：start | end | center | baseline | stretch 基本上而言是 box-pack的同级属性。设置框的子代在框中的排列方式。如果方向是水平的，该属性就会决定垂直排列，反之亦然。</span>
+                    </p>
+                    <p>项目属性</p>
+                    <p>
+                        <span>1.box-flex 值：0 | 任意整数 该子代的弹性比。弹性比为 1 的子代占据父代框的空间是弹性比为 2 的同级属性的两倍。其默认值为0，也就是不具有弹性。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 搞机 -->
+        <div class="list-con w1000" id="list-con" v-if="index == 'xn-1'">
+            <div class="content">
+                <div class="part">
+                    <label>1.新建虚拟机</label>
+                    <p>在virtualbox主界面下选择新建一个虚拟机，直接进入专家模式，按照下图。设置电脑的名称和类型，在此我设置的是“MacOS 10.12”，大家要记住这里设置的名字，因为后面会用得到。然后设置系统的内存大小，在此我设的是4096，因为我的总内存有8G，大伙自己看着办就好，但是建议不要小于2048。然后选择虚拟硬盘，直接选择从我百度网盘上下载的镜像文件即可。</p>
+                    <p><img src="../assets/image/xn-1.jpg" alt=""></p>
+                </div>
+                <div class="part">
+                    <label>2.虚拟电脑设置</label>
+                    <p>虚拟电脑创建成功后，不要急着启动，先进行一些设置。打开虚拟机的设置页面，进行如下设置：</p>
+                    <p><img src="../assets/image/xn-2.jpg" alt=""></p>
+                    <p>去除软驱</p>
+                    <p><img src="../assets/image/xn-3.jpg" alt=""></p>
+                    <p>设置CPU个数</p>
+                    <p><img src="../assets/image/xn-4.jpg" alt=""></p>
+                    <p>设置显示参数</p>
+                    <p>到此，点击OK保存设置，关闭virtualbox软件。</p>
+                </div>
+                <div class="part">
+                    <label>3.环境参数设置</label>
+                    <p>以管理员身份运行命令提示符（cmd），然后依次输入以下命令：</p>
+                    <pre v-highlight>
+                        <code class="lang-javascript">
+                            cd "C:\Program Files\Oracle\VirtualBox\" 
+
+                            VBoxManage.exe modifyvm "MacOS 10.12" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+                            VBoxManage setextradata "MacOS 10.12" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+                            VBoxManage setextradata "MacOS 10.12" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+                            VBoxManage setextradata "MacOS 10.12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+                            VBoxManage setextradata "MacOS 10.12" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+                            VBoxManage setextradata "MacOS 10.12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+                            <!-- 修改分辨率 -->
+                            VBoxManage setextradata "MacOS 10.12" CustomVideoMode1 1600x900x32
+                            VBoxManage setextradata "MacOS 10.12" VBoxInternal2/EfiGraphicsResolution 1600x900
+                        </code>
+                    </pre>
+                    <p>每条指令输入之后，运行成功的话，不会给出任何提示。如果收到了错误的提示，则说明你的指令输入错误。</p>
+                    <p><img src="../assets/image/xn-5.jpg" alt=""></p>
+                    <p>这里要注意的一点是，上面的”MacOS 10.12”表示的就是之前所建立的虚拟 电脑的名称。必须与你自己所输入的名称一致。如果你的名字不是这个，那就要改成你自己的名字。</p>
+                    <p>输入完毕后，打开虚拟机，启动创建的虚拟机，出现下面的界面。</p>
+                    <p><img src="../assets/image/xn-5.jpg" alt=""></p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -670,6 +826,7 @@ export default {
     },
     //是在DOM执行完成后立马执行（如：赋值）
     computed: {
+        a: '1'
         
     },
     //执行时挂载阶段还没有开始，模版还没有渲染成html，所以无法获取元素。created钩子函数主要用来初始化数据。
@@ -687,6 +844,7 @@ export default {
         console.log('数组长度',this.arrColor.length)
         console.log('获取Vuex中的数据',this.$store.state.count)
         console.log('获取Vuex中的数据',this.$store.getters.doneTodos)
+        console.log('computed执行',this.a)
 
         // this.timer = setInterval(() => {
         //     if(this.n == this.arrColor.length) {
@@ -717,8 +875,8 @@ export default {
         playerReadied(player) {
             var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
             player.tech_.hls.xhr.beforeRequest = function(options) {
-            // console.log(options)
-            return options
+                // console.log(options)
+                return options
             }
         },
 
@@ -741,7 +899,7 @@ export default {
             };
             Make.followDoctor(parames).then(res => {
                 console.log('接口返回数据',res)
-                console.log('后台数据',res.data)
+                console.log('后台返回数据',res.data)
             });
         },
 
@@ -753,13 +911,12 @@ export default {
 </script>
 
 <style scoped>
-.list-con {background: #ffffff;box-sizing: border-box;padding: 30px;/* border-top: 10px solid #FF0000;border-left: 10px solid #FF0000;border-right: 10px solid #FF0000; */border-radius: 25px;}
-.title {font-size: 30px;font-weight: bold;color: #ffffff;text-align: center;background: #21292f;height: 50px;line-height: 50px;margin-bottom: 15px;border-bottom-left-radius: 45px;border-top-right-radius: 45px;}
+.list-con {background: #ffffff;box-sizing: border-box;padding: 30px;border-radius: 25px;}
+.title {font-size: 20px;font-weight: bold;color: #ffffff;text-align: center;background: #21292f;height: 50px;line-height: 50px;margin-bottom: 15px;border-bottom-left-radius: 45px;border-top-right-radius: 45px;}
 
-.hljs {font-size: 14px;font-family: "Source Code Pro","DejaVu Sans Mono","Ubuntu Mono","Anonymous Pro","Droid Sans Mono",Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,"PingFang SC","Microsoft YaHei",sans-serif;}
+.hljs {font-size: 14px;font-family: "Source Code Pro","DejaVu Sans Mono","Ubuntu Mono","Anonymous Pro","Droid Sans Mono","PingFang SC","Microsoft YaHei";background: #f2f2f2;}
 pre {margin: 0;display: grid;}
 
-/* .part-head {width: 100%;height: 40px;background: #FF0000;} */
 #top-head {background: #21292f;text-align: center;height: 300px;margin-bottom: 30px;line-height: 300px;}
 #top-head .img {display: inline-block;margin-top: 20px;}
 
@@ -781,7 +938,6 @@ font-weight: bold;}
 @media screen and (max-width:640px){
     .list-con {background: #ffffff;box-sizing: border-box;padding: .3rem;}
     .mobile {padding: .18rem .15rem!important;}
-    /* .list-con video {height: 6rem;} */
     .w1000 {width: 100%;}
     .content p {line-height: .46rem;margin: .3rem 0;font-size: .28rem;}
     .content .part {margin-bottom: .2rem;background: #ffffff;padding: .1rem;}

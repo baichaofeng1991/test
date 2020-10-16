@@ -26,11 +26,7 @@
             <div class="nav"><img src="/content/image/menu.png" alt=""></div>
         </div>
 
-
         <!-- 资料下载详情 -->
-
-
-
 
         <!-- 新闻详情 -->
             <div class="new-detail">
@@ -57,29 +53,17 @@ mso-hansi-font-family:'Times New Roman';mso-bidi-font-family:'Times New Roman';"
                         <a href="/company/company?entid=320&type=news&did=239088">上一篇：贝加莱推出新的SuperTrak曲线段 占地紧凑 生...</a>
                                             <a href="/company/company?entid=320&type=news&did=239090">下一篇：刚刚，igus面对疫情危机表示...</a>
 
-
                 </div>
             </div>
-
-
         <!-- 方案应用 -->
-
-
 
         <!-- 产品详情 -->
 
-
         <!-- 视频详情 -->
-
-
 
         <!-- 公司简介 -->
 
-
         <!-- 联系我们 -->
-
-
-
 
 
         <!-- 联系我们 -->
@@ -250,19 +234,19 @@ mso-hansi-font-family:'Times New Roman';mso-bidi-font-family:'Times New Roman';"
         {
             var htm = '';
             $.ajax({
-            url: "/company/GetTechUp",
-            type: 'Get',
+                url: "/company/GetTechUp",
+                type: 'Get',
                 dataType: 'html',
                 data: { techid:239089,entid:320,typename:news }, //
                 success: function (data) {
 
-                     htm += ' ' + data + '';
+                        htm += ' ' + data + '';
                     $('.change-news').html(htm);
-            }, error: function (data) {
-                //联网失败的回调,隐藏下拉刷新的状态
-                mescroll.endErr();
-            }
-        });
+                }, error: function (data) {
+                    //联网失败的回调,隐藏下拉刷新的状态
+                    mescroll.endErr();
+                }
+            });
         }
 
 
@@ -507,10 +491,7 @@ mso-hansi-font-family:'Times New Roman';mso-bidi-font-family:'Times New Roman';"
                 mescroll.endErr();
             }
         });
-
-
-
-            })
+    })
     </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
             <ul>
                 <li>
                     <p class="title">
-                        <router-link :to ="{path:'/detail',query:{index:'vue-1',title:'Vue面试知识点总结'}}">Vue面试知识点总结</router-link>
+                        <router-link :to ="{path:'/detail',query:{index:'vue-1',title:'Vue面试知识点总结'}}">Vue面试知识点总结<b></b></router-link>
                     </p>
                     <p class="intro">看看面试题，只是为了查漏补缺，看看自己那些方面还不懂。切记不要以为背了面试题，就万事大吉了，最好是理解背后的原理，这样面试的时候才能侃侃而谈。不然，稍微有水平的面试官一看就能看出，是否有真才实学还是刚好背中了这道面试题。</p>
                 </li>
@@ -238,8 +238,38 @@
                 </li>
                 <li>
                     <p class="title">
-                        <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <span class="name">样式特效源码下载：</span>
+                        <a class="url" href="https://www.html5tricks.com/" target="_blank">https://www.html5tricks.com/</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">剪辑软件premiere/pro-cc 2018破解版安装教程：</span>
+                        <a class="url" href="http://www.downza.cn/soft/273285.html" target="_blank">http://www.downza.cn/soft/273285.html</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">如何在64位win10系统下通过virtualbox虚拟机安装苹果macOS 10.12：</span>
+                        <a class="url" href="https://blog.csdn.net/LEON1741/article/details/80910244" target="_blank">https://blog.csdn.net/LEON1741/article/details/80910244</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to ="{path:'/detail',query:{index:'xn-1',title:'如何在64位win10系统下通过virtualbox虚拟机安装苹果macOS 10.12'}}">如何在64位win10系统下通过virtualbox虚拟机安装苹果macOS 10.12</router-link>
+                    </p>
+                    <p class="intro">用虚拟机在WIN上玩转Mac OS系统</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">Oracle VM VirtualBox安装配置Mac OS:</span>
+                        <a class="url" href="https://blog.csdn.net/Tingshuo2009/article/details/105033352?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank">https://blog.csdn.net/Tingshuo2009/article/details/105033352?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="title">
+                        <span class="name">JQ特效代码下载：</span>
+                        <a class="url" href="http://www.jq22.com/webqd2630" target="_blank">http://www.jq22.com/webqd2630</a>
                     </p>
                 </li>
                 <li>
@@ -248,11 +278,22 @@
                         <a class="url" href="" target="_blank"></a>
                     </p>
                 </li>
+            </ul>
+        </div>
+        <!-- css样式 -->
+        <div class="list-con w1000" v-if="receive == 8">
+            <ul>
                 <li>
                     <p class="title">
-                        <span class="name"></span>
-                        <a class="url" href="" target="_blank"></a>
+                        <router-link :to ="{path:'/detail',query:{index:'cs-1',title:'transform详解'}}">transform详解</router-link>
                     </p>
+                    <p class="intro">..........</p>
+                </li>
+                <li>
+                    <p class="title">
+                        <router-link :to="{path:'/detail',query:{index:'cs-2',title:'display详解'}}">display详解</router-link>
+                    </p>
+                    <p class="intro">。。。。。。</p>
                 </li>
             </ul>
         </div>
@@ -302,6 +343,9 @@ export default {
 .list-con li {padding: 30px 0;border-bottom: 1px solid #eeeeee;}
 .list-con li:last-child {margin-bottom: 0;border-bottom: 0;}
 .list-con li p.title {font-size: 20px;font-weight: bold;color: #333333;margin-bottom: 10px;cursor: pointer;}
+/* css实现小三角使用 transparent 隐藏任何一边边框*/
+.list-con li p.title b {border-width: 8px 8px 8px 8px;border-style: solid;border-color: crimson coral yellow green;}
+
 .list-con li p.title span.name {font-size: 14px;color: #999999;font-weight: 400;}
 .list-con li p.title a.url {font-size: 14px;color: cornflowerblue;font-weight: 400;}
 .list-con li p.title:hover {color: #d72b00;}
