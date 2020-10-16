@@ -1,6 +1,6 @@
 <template>
     <div>
-        <my-head :index = 'num' @transmit = 'transmitData'></my-head>
+        <my-header :index = 'num' @transmit = 'transmitData'></my-header>
         <!-- vue -->
         <div class="list-con w1000" v-if="receive == 1">
             <ul>
@@ -302,7 +302,7 @@
 
 <script>
 
-import myHead from '../components/header';
+import myHeader from '../components/m_header';
 
 export default {
     props: {
@@ -334,7 +334,7 @@ export default {
 
     },
     components: {
-        myHead
+        myHeader
     },
 };
 </script>
