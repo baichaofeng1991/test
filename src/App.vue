@@ -11,7 +11,7 @@ export default {
   mounted() {
     if (this._isMobile()) {
       // alert("手机端");
-      this.$router.replace(/* '/m_home' */'/pc_home');
+      this.$router.replace(/* '/m_home' */'/m_home');
     } else {
       // alert("pc端");
       this.$router.replace('/pc_home');
